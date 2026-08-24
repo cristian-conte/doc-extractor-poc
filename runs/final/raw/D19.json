@@ -1,0 +1,90 @@
+{
+  "doc_id": "D19",
+  "input_file": "D19.pdf",
+  "status": "ok",
+  "fields": {
+    "doc_type": {
+      "value": "confirmation",
+      "confidence": "confident"
+    },
+    "sender_name": {
+      "value": "National Spot Reps LLC",
+      "confidence": "confident"
+    },
+    "doc_id": {
+      "value": "NSR-80255",
+      "confidence": "confident"
+    },
+    "doc_date": {
+      "value": "2026-05-13",
+      "confidence": "confident"
+    },
+    "advertiser": {
+      "value": "Hillcrest Motors",
+      "confidence": "confident"
+    },
+    "agency": {
+      "value": "Brightline Media",
+      "confidence": "confident"
+    },
+    "flight_start": {
+      "value": "2026-05-28",
+      "confidence": "confident"
+    },
+    "flight_end": {
+      "value": "2026-06-03",
+      "confidence": "confident"
+    },
+    "gross_total": {
+      "value": 23114.15,
+      "confidence": "confident"
+    },
+    "net_total": {
+      "value": 19647.03,
+      "confidence": "confident"
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": "confident"
+    },
+    "line_item_count": {
+      "value": 3,
+      "confidence": "confident"
+    }
+  },
+  "line_items": [
+    {
+      "description": "Midday Rotator M-Su 10a-3p :30",
+      "quantity": 8,
+      "unit_rate": 476.08,
+      "amount": 3808.64
+    },
+    {
+      "description": "Primetime Rotator M-Su 8-11p :30",
+      "quantity": 8,
+      "unit_rate": 469.81,
+      "amount": 3758.48
+    },
+    {
+      "description": "Overnight ROS 12-6a :30",
+      "quantity": 23,
+      "unit_rate": 692.36,
+      "amount": 15924.28
+    }
+  ],
+  "issues": [
+    "Sum of line-item EXTENDED amounts is $23,491.40, which does not match the printed Contract Total of $23,114.15; the document notes a negotiated rate adjustment applied at the contract level to explain the difference.",
+    "Document header contains several unrelated decoy figures (Client Code 4,412.00, Est. No. 1,088.75, Prior Balance Fwd $2,450.00) not used as doc_id, totals, or line items.",
+    "A WKS (weeks) column of 4 is listed per line but is not used as a multiplier in the EXTENDED amount (amount = SPOTS x UNIT RATE only); quantity was taken as the SPOTS count.",
+    "Net to Station ($19,647.03) is approximately 85% of Contract Total, consistent with a 15% agency commission, though no commission rate or percentage is explicitly stated on the document."
+  ],
+  "error_detail": null,
+  "raw_response": "```json\n{\n  \"doc_type\": {\"value\": \"confirmation\", \"confidence\": \"confident\"},\n  \"sender_name\": {\"value\": \"National Spot Reps LLC\", \"confidence\": \"confident\"},\n  \"doc_id\": {\"value\": \"NSR-80255\", \"confidence\": \"confident\"},\n  \"doc_date\": {\"value\": \"2026-05-13\", \"confidence\": \"confident\"},\n  \"advertiser\": {\"value\": \"Hillcrest Motors\", \"confidence\": \"confident\"},\n  \"agency\": {\"value\": \"Brightline Media\", \"confidence\": \"confident\"},\n  \"flight_start\": {\"value\": \"2026-05-28\", \"confidence\": \"confident\"},\n  \"flight_end\": {\"value\": \"2026-06-03\", \"confidence\": \"confident\"},\n  \"gross_total\": {\"value\": 23114.15, \"confidence\": \"confident\"},\n  \"net_total\": {\"value\": 19647.03, \"confidence\": \"confident\"},\n  \"currency\": {\"value\": \"USD\", \"confidence\": \"confident\"},\n  \"line_item_count\": {\"value\": 3, \"confidence\": \"confident\"},\n  \"line_items\": [\n    {\n      \"description\": \"Midday Rotator M-Su 10a-3p :30\",\n      \"quantity\": 8,\n      \"unit_rate\": 476.08,\n      \"amount\": 3808.64\n    },\n    {\n      \"description\": \"Primetime Rotator M-Su 8-11p :30\",\n      \"quantity\": 8,\n      \"unit_rate\": 469.81,\n      \"amount\": 3758.48\n    },\n    {\n      \"description\": \"Overnight ROS 12-6a :30\",\n      \"quantity\": 23,\n      \"unit_rate\": 692.36,\n      \"amount\": 15924.28\n    }\n  ],\n  \"issues\": [\n    \"Sum of line-item EXTENDED amounts is $23,491.40, which does not match the printed Contract Total of $23,114.15; the document notes a negotiated rate adjustment applied at the contract level to explain the difference.\",\n    \"Document header contains several unrelated decoy figures (Client Code 4,412.00, Est. No. 1,088.75, Prior Balance Fwd $2,450.00) not used as doc_id, totals, or line items.\",\n    \"A WKS (weeks) column of 4 is listed per line but is not used as a multiplier in the EXTENDED amount (amount = SPOTS x UNIT RATE only); quantity was taken as the SPOTS count.\",\n    \"Net to Station ($19,647.03) is approximately 85% of Contract Total, consistent with a 15% agency commission, though no commission rate or percentage is explicitly stated on the document.\"\n  ]\n}\n```",
+  "meta": {
+    "attempts": 1,
+    "duration_s": 44.1,
+    "cost_usd": 0.1027,
+    "turns": 4,
+    "prompt_hash": "a2b2d13aaef8"
+  }
+}

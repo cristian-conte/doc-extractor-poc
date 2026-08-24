@@ -1,0 +1,95 @@
+{
+  "doc_id": "D05",
+  "input_file": "D05.pdf",
+  "status": "ok",
+  "fields": {
+    "doc_type": {
+      "value": "confirmation",
+      "confidence": "confident"
+    },
+    "sender_name": {
+      "value": "National Spot Reps LLC",
+      "confidence": "confident"
+    },
+    "doc_id": {
+      "value": "NSR-98911",
+      "confidence": "confident"
+    },
+    "doc_date": {
+      "value": "2026-03-17",
+      "confidence": "confident"
+    },
+    "advertiser": {
+      "value": "Copperfield Insurance",
+      "confidence": "confident"
+    },
+    "agency": {
+      "value": "Anchor Media Partners",
+      "confidence": "confident"
+    },
+    "flight_start": {
+      "value": "2026-04-09",
+      "confidence": "confident"
+    },
+    "flight_end": {
+      "value": "2026-04-15",
+      "confidence": "confident"
+    },
+    "gross_total": {
+      "value": 39115.38,
+      "confidence": "confident"
+    },
+    "net_total": {
+      "value": 33248.07,
+      "confidence": "confident"
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": "confident"
+    },
+    "line_item_count": {
+      "value": 4,
+      "confidence": "confident"
+    }
+  },
+  "line_items": [
+    {
+      "description": "Early News M-F 5-6:30p, :30, 4 wks",
+      "quantity": 6,
+      "unit_rate": 898.7,
+      "amount": 5392.2
+    },
+    {
+      "description": "Primetime Rotator M-Su 8-11p, :30, 4 wks",
+      "quantity": 20,
+      "unit_rate": 645.09,
+      "amount": 12901.8
+    },
+    {
+      "description": "Weekend Sports Sa-Su 12-6p, :30, 4 wks",
+      "quantity": 33,
+      "unit_rate": 449.11,
+      "amount": 14820.63
+    },
+    {
+      "description": "Primetime Rotator M-Su 8-11p, :30, 4 wks",
+      "quantity": 21,
+      "unit_rate": 285.75,
+      "amount": 6000.75
+    }
+  ],
+  "issues": [
+    "UNIT RATE \u00d7 SPOTS equals EXTENDED for every line, so the WKS column does not appear to be applied as a further multiplier despite its label.",
+    "Two separate line items share the identical description 'Primetime Rotator M-Su 8-11p :30' with different spot counts and rates; document does not explain the distinction.",
+    "'Client Code 4,412.00' and 'Est. No. 1,088.75' are formatted as decimal currency-like numbers rather than typical integer codes, which is unusual."
+  ],
+  "error_detail": null,
+  "raw_response": "```json\n{\n  \"doc_type\": {\"value\": \"confirmation\", \"confidence\": \"confident\"},\n  \"sender_name\": {\"value\": \"National Spot Reps LLC\", \"confidence\": \"confident\"},\n  \"doc_id\": {\"value\": \"NSR-98911\", \"confidence\": \"confident\"},\n  \"doc_date\": {\"value\": \"2026-03-17\", \"confidence\": \"confident\"},\n  \"advertiser\": {\"value\": \"Copperfield Insurance\", \"confidence\": \"confident\"},\n  \"agency\": {\"value\": \"Anchor Media Partners\", \"confidence\": \"confident\"},\n  \"flight_start\": {\"value\": \"2026-04-09\", \"confidence\": \"confident\"},\n  \"flight_end\": {\"value\": \"2026-04-15\", \"confidence\": \"confident\"},\n  \"gross_total\": {\"value\": 39115.38, \"confidence\": \"confident\"},\n  \"net_total\": {\"value\": 33248.07, \"confidence\": \"confident\"},\n  \"currency\": {\"value\": \"USD\", \"confidence\": \"confident\"},\n  \"line_item_count\": {\"value\": 4, \"confidence\": \"confident\"},\n  \"line_items\": [\n    {\"description\": \"Early News M-F 5-6:30p, :30, 4 wks\", \"quantity\": 6, \"unit_rate\": 898.70, \"amount\": 5392.20},\n    {\"description\": \"Primetime Rotator M-Su 8-11p, :30, 4 wks\", \"quantity\": 20, \"unit_rate\": 645.09, \"amount\": 12901.80},\n    {\"description\": \"Weekend Sports Sa-Su 12-6p, :30, 4 wks\", \"quantity\": 33, \"unit_rate\": 449.11, \"amount\": 14820.63},\n    {\"description\": \"Primetime Rotator M-Su 8-11p, :30, 4 wks\", \"quantity\": 21, \"unit_rate\": 285.75, \"amount\": 6000.75}\n  ],\n  \"issues\": [\n    \"UNIT RATE \u00d7 SPOTS equals EXTENDED for every line, so the WKS column does not appear to be applied as a further multiplier despite its label.\",\n    \"Two separate line items share the identical description 'Primetime Rotator M-Su 8-11p :30' with different spot counts and rates; document does not explain the distinction.\",\n    \"'Client Code 4,412.00' and 'Est. No. 1,088.75' are formatted as decimal currency-like numbers rather than typical integer codes, which is unusual.\"\n  ]\n}\n```",
+  "meta": {
+    "attempts": 1,
+    "duration_s": 46.6,
+    "cost_usd": 0.1222,
+    "turns": 6,
+    "prompt_hash": "a2b2d13aaef8"
+  }
+}

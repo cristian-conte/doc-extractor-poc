@@ -1,0 +1,81 @@
+{
+  "doc_id": "D04",
+  "input_file": "D04.jpg",
+  "status": "ok",
+  "fields": {
+    "doc_type": {
+      "value": "order",
+      "confidence": "confident"
+    },
+    "sender_name": {
+      "value": "KTVR-TV CHANNEL 9",
+      "confidence": "confident"
+    },
+    "doc_id": {
+      "value": "43-28999",
+      "confidence": "confident"
+    },
+    "doc_date": {
+      "value": "2026-06-04",
+      "confidence": "confident"
+    },
+    "advertiser": {
+      "value": "VAL'S HOME & GARDEN",
+      "confidence": "confident"
+    },
+    "agency": {
+      "value": "BRIGHTLINE MEDIA",
+      "confidence": "confident"
+    },
+    "flight_start": {
+      "value": "2026-06-19",
+      "confidence": "confident"
+    },
+    "flight_end": {
+      "value": "2026-07-02",
+      "confidence": "confident"
+    },
+    "gross_total": {
+      "value": 30218.47,
+      "confidence": "confident"
+    },
+    "net_total": {
+      "value": 25685.7,
+      "confidence": "confident"
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": "confident"
+    },
+    "line_item_count": {
+      "value": 2,
+      "confidence": "confident"
+    }
+  },
+  "line_items": [
+    {
+      "description": "Primetime Rotator M-Su 8-11p",
+      "quantity": 11,
+      "unit_rate": 758.37,
+      "amount": 8342.07
+    },
+    {
+      "description": "Midday Rotator M-Su 10a-3p",
+      "quantity": 26,
+      "unit_rate": 841.4,
+      "amount": 21876.4
+    }
+  ],
+  "issues": [
+    "The line labeled 'LESS AGY COMM 15%' shows $25,685.70, which is actually the net amount AFTER the 15% commission deduction (gross $30,218.47 minus 15% = $25,685.70), not the commission amount itself. The label is misleading but the value has been mapped to net_total accordingly."
+  ],
+  "error_detail": null,
+  "raw_response": "```json\n{\n  \"doc_type\": {\"value\": \"order\", \"confidence\": \"confident\"},\n  \"sender_name\": {\"value\": \"KTVR-TV CHANNEL 9\", \"confidence\": \"confident\"},\n  \"doc_id\": {\"value\": \"43-28999\", \"confidence\": \"confident\"},\n  \"doc_date\": {\"value\": \"2026-06-04\", \"confidence\": \"confident\"},\n  \"advertiser\": {\"value\": \"VAL'S HOME & GARDEN\", \"confidence\": \"confident\"},\n  \"agency\": {\"value\": \"BRIGHTLINE MEDIA\", \"confidence\": \"confident\"},\n  \"flight_start\": {\"value\": \"2026-06-19\", \"confidence\": \"confident\"},\n  \"flight_end\": {\"value\": \"2026-07-02\", \"confidence\": \"confident\"},\n  \"gross_total\": {\"value\": 30218.47, \"confidence\": \"confident\"},\n  \"net_total\": {\"value\": 25685.70, \"confidence\": \"confident\"},\n  \"currency\": {\"value\": \"USD\", \"confidence\": \"confident\"},\n  \"line_item_count\": {\"value\": 2, \"confidence\": \"confident\"},\n  \"line_items\": [\n    {\n      \"description\": \"Primetime Rotator M-Su 8-11p\",\n      \"quantity\": 11,\n      \"unit_rate\": 758.37,\n      \"amount\": 8342.07\n    },\n    {\n      \"description\": \"Midday Rotator M-Su 10a-3p\",\n      \"quantity\": 26,\n      \"unit_rate\": 841.40,\n      \"amount\": 21876.40\n    }\n  ],\n  \"issues\": [\n    \"The line labeled 'LESS AGY COMM 15%' shows $25,685.70, which is actually the net amount AFTER the 15% commission deduction (gross $30,218.47 minus 15% = $25,685.70), not the commission amount itself. The label is misleading but the value has been mapped to net_total accordingly.\"\n  ]\n}\n```",
+  "meta": {
+    "attempts": 1,
+    "duration_s": 36.0,
+    "cost_usd": 0.089,
+    "turns": 3,
+    "prompt_hash": "a2b2d13aaef8"
+  }
+}

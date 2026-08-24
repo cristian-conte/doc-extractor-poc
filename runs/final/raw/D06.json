@@ -1,0 +1,96 @@
+{
+  "doc_id": "D06",
+  "input_file": "D06.png",
+  "status": "ok",
+  "fields": {
+    "doc_type": {
+      "value": "confirmation",
+      "confidence": "confident"
+    },
+    "sender_name": {
+      "value": "National Spot Reps LLC",
+      "confidence": "confident"
+    },
+    "doc_id": {
+      "value": "NSR-88253",
+      "confidence": "confident"
+    },
+    "doc_date": {
+      "value": "2026-05-24",
+      "confidence": "confident"
+    },
+    "advertiser": {
+      "value": "Northgate Dental Group",
+      "confidence": "confident"
+    },
+    "agency": {
+      "value": null,
+      "confidence": "not_present"
+    },
+    "flight_start": {
+      "value": "2026-06-07",
+      "confidence": "confident"
+    },
+    "flight_end": {
+      "value": "2026-07-04",
+      "confidence": "confident"
+    },
+    "gross_total": {
+      "value": 49433.79,
+      "confidence": "confident"
+    },
+    "net_total": {
+      "value": null,
+      "confidence": "not_present"
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": "confident"
+    },
+    "line_item_count": {
+      "value": 4,
+      "confidence": "confident"
+    }
+  },
+  "line_items": [
+    {
+      "description": "Midday Rotator M-Su 10a-3p",
+      "quantity": 33,
+      "unit_rate": 641.03,
+      "amount": 21153.99
+    },
+    {
+      "description": "Midday Rotator M-Su 10a-3p",
+      "quantity": 38,
+      "unit_rate": 301.83,
+      "amount": 11469.54
+    },
+    {
+      "description": "Late News M-F 11-11:35p",
+      "quantity": 19,
+      "unit_rate": 846.9,
+      "amount": 16091.1
+    },
+    {
+      "description": "Early News M-F 5-6:30p",
+      "quantity": 13,
+      "unit_rate": 55.32,
+      "amount": 719.16
+    }
+  ],
+  "issues": [
+    "Document states 'Buyer direct', indicating no agency is involved in this buy.",
+    "The unit rate on the 'Late News' line is printed ambiguously (could read as $646.90 or $846.90); $846.90 was used because it is the only value consistent with the stated extended amount ($16,091.10) and the Contract Total ($49,433.79 = sum of all four extended amounts).",
+    "'Client Code' (4,412.00) and 'Est. No.' (1,088.75) are printed with decimal formatting unusual for ID numbers; neither was used as doc_id since 'Ref NSR-88253' is explicitly labeled as the document reference.",
+    "No commission rate or net total is shown; only a single 'Contract Total' figure is given, so it is reported as gross_total."
+  ],
+  "error_detail": null,
+  "raw_response": "```json\n{\n  \"doc_type\": {\"value\": \"confirmation\", \"confidence\": \"confident\"},\n  \"sender_name\": {\"value\": \"National Spot Reps LLC\", \"confidence\": \"confident\"},\n  \"doc_id\": {\"value\": \"NSR-88253\", \"confidence\": \"confident\"},\n  \"doc_date\": {\"value\": \"2026-05-24\", \"confidence\": \"confident\"},\n  \"advertiser\": {\"value\": \"Northgate Dental Group\", \"confidence\": \"confident\"},\n  \"agency\": {\"value\": null, \"confidence\": \"not_present\"},\n  \"flight_start\": {\"value\": \"2026-06-07\", \"confidence\": \"confident\"},\n  \"flight_end\": {\"value\": \"2026-07-04\", \"confidence\": \"confident\"},\n  \"gross_total\": {\"value\": 49433.79, \"confidence\": \"confident\"},\n  \"net_total\": {\"value\": null, \"confidence\": \"not_present\"},\n  \"currency\": {\"value\": \"USD\", \"confidence\": \"confident\"},\n  \"line_item_count\": {\"value\": 4, \"confidence\": \"confident\"},\n  \"line_items\": [\n    {\"description\": \"Midday Rotator M-Su 10a-3p\", \"quantity\": 33, \"unit_rate\": 641.03, \"amount\": 21153.99},\n    {\"description\": \"Midday Rotator M-Su 10a-3p\", \"quantity\": 38, \"unit_rate\": 301.83, \"amount\": 11469.54},\n    {\"description\": \"Late News M-F 11-11:35p\", \"quantity\": 19, \"unit_rate\": 846.90, \"amount\": 16091.10},\n    {\"description\": \"Early News M-F 5-6:30p\", \"quantity\": 13, \"unit_rate\": 55.32, \"amount\": 719.16}\n  ],\n  \"issues\": [\n    \"Document states 'Buyer direct', indicating no agency is involved in this buy.\",\n    \"The unit rate on the 'Late News' line is printed ambiguously (could read as $646.90 or $846.90); $846.90 was used because it is the only value consistent with the stated extended amount ($16,091.10) and the Contract Total ($49,433.79 = sum of all four extended amounts).\",\n    \"'Client Code' (4,412.00) and 'Est. No.' (1,088.75) are printed with decimal formatting unusual for ID numbers; neither was used as doc_id since 'Ref NSR-88253' is explicitly labeled as the document reference.\",\n    \"No commission rate or net total is shown; only a single 'Contract Total' figure is given, so it is reported as gross_total.\"\n  ]\n}\n```",
+  "meta": {
+    "attempts": 1,
+    "duration_s": 153.1,
+    "cost_usd": 0.242,
+    "turns": 13,
+    "prompt_hash": "a2b2d13aaef8"
+  }
+}

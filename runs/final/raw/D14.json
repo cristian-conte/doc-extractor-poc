@@ -1,0 +1,141 @@
+{
+  "doc_id": "D14",
+  "input_file": "D14.jpg",
+  "status": "ok",
+  "fields": {
+    "doc_type": {
+      "value": "invoice",
+      "confidence": "confident"
+    },
+    "sender_name": {
+      "value": "Europa Media Vertretung GmbH",
+      "confidence": "confident"
+    },
+    "doc_id": {
+      "value": "EMV-29024",
+      "confidence": "confident"
+    },
+    "doc_date": {
+      "value": "2026-02-13",
+      "confidence": "confident"
+    },
+    "advertiser": {
+      "value": "Ridgeway Furniture Outlet",
+      "confidence": "confident"
+    },
+    "agency": {
+      "value": "Anchor Media Partners",
+      "confidence": "confident"
+    },
+    "flight_start": {
+      "value": "2026-02-27",
+      "confidence": "confident"
+    },
+    "flight_end": {
+      "value": "2026-03-05",
+      "confidence": "confident"
+    },
+    "gross_total": {
+      "value": "34337.80",
+      "confidence": "confident"
+    },
+    "net_total": {
+      "value": "29187.13",
+      "confidence": "confident"
+    },
+    "currency": {
+      "value": "EUR",
+      "confidence": "confident"
+    },
+    "line_item_count": {
+      "value": 4,
+      "confidence": "confident"
+    }
+  },
+  "line_items": [
+    {
+      "description": {
+        "value": "Primetime Rotator M-Su 8-11p",
+        "confidence": "confident"
+      },
+      "quantity": {
+        "value": 20,
+        "confidence": "confident"
+      },
+      "unit_rate": {
+        "value": "880.01",
+        "confidence": "confident"
+      },
+      "amount": {
+        "value": "17600.20",
+        "confidence": "confident"
+      }
+    },
+    {
+      "description": {
+        "value": "Early News M-F 5-6:30p",
+        "confidence": "confident"
+      },
+      "quantity": {
+        "value": 12,
+        "confidence": "confident"
+      },
+      "unit_rate": {
+        "value": "473.69",
+        "confidence": "confident"
+      },
+      "amount": {
+        "value": "5684.28",
+        "confidence": "confident"
+      }
+    },
+    {
+      "description": {
+        "value": "Prime Access M-F 7-8p",
+        "confidence": "confident"
+      },
+      "quantity": {
+        "value": 8,
+        "confidence": "confident"
+      },
+      "unit_rate": {
+        "value": "555.07",
+        "confidence": "confident"
+      },
+      "amount": {
+        "value": "4440.56",
+        "confidence": "confident"
+      }
+    },
+    {
+      "description": {
+        "value": "Overnight ROS 12-6a",
+        "confidence": "confident"
+      },
+      "quantity": {
+        "value": 14,
+        "confidence": "confident"
+      },
+      "unit_rate": {
+        "value": "472.34",
+        "confidence": "confident"
+      },
+      "amount": {
+        "value": "6612.76",
+        "confidence": "confident"
+      }
+    }
+  ],
+  "issues": [
+    "Net total is labeled 'Netto abzgl. 15% Provision' (net after 15% commission), not a separately stated net-of-VAT figure."
+  ],
+  "error_detail": null,
+  "raw_response": "```json\n{\n  \"doc_type\": {\"value\": \"invoice\", \"confidence\": \"confident\"},\n  \"sender_name\": {\"value\": \"Europa Media Vertretung GmbH\", \"confidence\": \"confident\"},\n  \"doc_id\": {\"value\": \"EMV-29024\", \"confidence\": \"confident\"},\n  \"doc_date\": {\"value\": \"2026-02-13\", \"confidence\": \"confident\"},\n  \"advertiser\": {\"value\": \"Ridgeway Furniture Outlet\", \"confidence\": \"confident\"},\n  \"agency\": {\"value\": \"Anchor Media Partners\", \"confidence\": \"confident\"},\n  \"flight_start\": {\"value\": \"2026-02-27\", \"confidence\": \"confident\"},\n  \"flight_end\": {\"value\": \"2026-03-05\", \"confidence\": \"confident\"},\n  \"gross_total\": {\"value\": \"34337.80\", \"confidence\": \"confident\"},\n  \"net_total\": {\"value\": \"29187.13\", \"confidence\": \"confident\"},\n  \"currency\": {\"value\": \"EUR\", \"confidence\": \"confident\"},\n  \"line_item_count\": {\"value\": 4, \"confidence\": \"confident\"},\n  \"line_items\": [\n    {\n      \"description\": {\"value\": \"Primetime Rotator M-Su 8-11p\", \"confidence\": \"confident\"},\n      \"quantity\": {\"value\": 20, \"confidence\": \"confident\"},\n      \"unit_rate\": {\"value\": \"880.01\", \"confidence\": \"confident\"},\n      \"amount\": {\"value\": \"17600.20\", \"confidence\": \"confident\"}\n    },\n    {\n      \"description\": {\"value\": \"Early News M-F 5-6:30p\", \"confidence\": \"confident\"},\n      \"quantity\": {\"value\": 12, \"confidence\": \"confident\"},\n      \"unit_rate\": {\"value\": \"473.69\", \"confidence\": \"confident\"},\n      \"amount\": {\"value\": \"5684.28\", \"confidence\": \"confident\"}\n    },\n    {\n      \"description\": {\"value\": \"Prime Access M-F 7-8p\", \"confidence\": \"confident\"},\n      \"quantity\": {\"value\": 8, \"confidence\": \"confident\"},\n      \"unit_rate\": {\"value\": \"555.07\", \"confidence\": \"confident\"},\n      \"amount\": {\"value\": \"4440.56\", \"confidence\": \"confident\"}\n    },\n    {\n      \"description\": {\"value\": \"Overnight ROS 12-6a\", \"confidence\": \"confident\"},\n      \"quantity\": {\"value\": 14, \"confidence\": \"confident\"},\n      \"unit_rate\": {\"value\": \"472.34\", \"confidence\": \"confident\"},\n      \"amount\": {\"value\": \"6612.76\", \"confidence\": \"confident\"}\n    }\n  ],\n  \"issues\": [\"Net total is labeled 'Netto abzgl. 15% Provision' (net after 15% commission), not a separately stated net-of-VAT figure.\"]\n}\n```",
+  "meta": {
+    "attempts": 1,
+    "duration_s": 23.6,
+    "cost_usd": 0.0841,
+    "turns": 3,
+    "prompt_hash": "a2b2d13aaef8"
+  }
+}

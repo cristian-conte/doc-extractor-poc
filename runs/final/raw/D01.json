@@ -1,0 +1,82 @@
+{
+  "doc_id": "D01",
+  "input_file": "D01.pdf",
+  "status": "ok",
+  "fields": {
+    "doc_type": {
+      "value": "invoice",
+      "confidence": "confident"
+    },
+    "sender_name": {
+      "value": "Meridian Broadcast Group",
+      "confidence": "confident"
+    },
+    "doc_id": {
+      "value": "MBG-62202",
+      "confidence": "confident"
+    },
+    "doc_date": {
+      "value": "2026-03-23",
+      "confidence": "confident"
+    },
+    "advertiser": {
+      "value": "PaveRight Contracting",
+      "confidence": "confident"
+    },
+    "agency": {
+      "value": "Keystone Buying Svcs",
+      "confidence": "confident"
+    },
+    "flight_start": {
+      "value": "2026-04-16",
+      "confidence": "confident"
+    },
+    "flight_end": {
+      "value": "2026-04-22",
+      "confidence": "confident"
+    },
+    "gross_total": {
+      "value": 30655.59,
+      "confidence": "confident"
+    },
+    "net_total": {
+      "value": 26057.25,
+      "confidence": "confident"
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": "uncertain"
+    },
+    "line_item_count": {
+      "value": 2,
+      "confidence": "confident"
+    }
+  },
+  "line_items": [
+    {
+      "description": "Early News M-F 5-6:30p",
+      "quantity": 32,
+      "unit_rate": 673.92,
+      "amount": 21565.44
+    },
+    {
+      "description": "Overnight ROS 12-6a",
+      "quantity": 15,
+      "unit_rate": 606.01,
+      "amount": 9090.15
+    }
+  ],
+  "issues": [
+    "Currency symbol is '$' with no explicit code; USD inferred from Cleveland, OH sender address.",
+    "Stated net total ($26,057.25) is slightly off from an exact 15% deduction from Total Due ($26,057.00), likely due to per-line rounding rather than an error."
+  ],
+  "error_detail": null,
+  "raw_response": "```json\n{\n  \"doc_type\": {\"value\": \"invoice\", \"confidence\": \"confident\"},\n  \"sender_name\": {\"value\": \"Meridian Broadcast Group\", \"confidence\": \"confident\"},\n  \"doc_id\": {\"value\": \"MBG-62202\", \"confidence\": \"confident\"},\n  \"doc_date\": {\"value\": \"2026-03-23\", \"confidence\": \"confident\"},\n  \"advertiser\": {\"value\": \"PaveRight Contracting\", \"confidence\": \"confident\"},\n  \"agency\": {\"value\": \"Keystone Buying Svcs\", \"confidence\": \"confident\"},\n  \"flight_start\": {\"value\": \"2026-04-16\", \"confidence\": \"confident\"},\n  \"flight_end\": {\"value\": \"2026-04-22\", \"confidence\": \"confident\"},\n  \"gross_total\": {\"value\": 30655.59, \"confidence\": \"confident\"},\n  \"net_total\": {\"value\": 26057.25, \"confidence\": \"confident\"},\n  \"currency\": {\"value\": \"USD\", \"confidence\": \"uncertain\"},\n  \"line_item_count\": {\"value\": 2, \"confidence\": \"confident\"},\n  \"line_items\": [\n    {\"description\": \"Early News M-F 5-6:30p\", \"quantity\": 32, \"unit_rate\": 673.92, \"amount\": 21565.44},\n    {\"description\": \"Overnight ROS 12-6a\", \"quantity\": 15, \"unit_rate\": 606.01, \"amount\": 9090.15}\n  ],\n  \"issues\": [\n    \"Currency symbol is '$' with no explicit code; USD inferred from Cleveland, OH sender address.\",\n    \"Stated net total ($26,057.25) is slightly off from an exact 15% deduction from Total Due ($26,057.00), likely due to per-line rounding rather than an error.\"\n  ]\n}\n```",
+  "meta": {
+    "attempts": 1,
+    "duration_s": 22.3,
+    "cost_usd": 0.0797,
+    "turns": 4,
+    "prompt_hash": "a2b2d13aaef8"
+  }
+}

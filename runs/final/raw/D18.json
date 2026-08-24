@@ -1,0 +1,84 @@
+{
+  "doc_id": "D18",
+  "input_file": "D18.jpg",
+  "status": "ok",
+  "fields": {
+    "doc_type": {
+      "value": "order",
+      "confidence": "uncertain"
+    },
+    "sender_name": {
+      "value": "QUICKSPOT DIGITAL",
+      "confidence": "confident"
+    },
+    "doc_id": {
+      "value": "QS-46291",
+      "confidence": "confident"
+    },
+    "doc_date": {
+      "value": "2026-02-22",
+      "confidence": "confident"
+    },
+    "advertiser": {
+      "value": "PaveRight Contracting",
+      "confidence": "confident"
+    },
+    "agency": {
+      "value": "Keystone Buying Svcs",
+      "confidence": "confident"
+    },
+    "flight_start": {
+      "value": "2026-03-04",
+      "confidence": "confident"
+    },
+    "flight_end": {
+      "value": "2026-03-24",
+      "confidence": "confident"
+    },
+    "gross_total": {
+      "value": null,
+      "confidence": "not_present"
+    },
+    "net_total": {
+      "value": null,
+      "confidence": "not_present"
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": "confident"
+    },
+    "line_item_count": {
+      "value": 2,
+      "confidence": "uncertain"
+    }
+  },
+  "line_items": [
+    {
+      "description": "Midday Rotator M-Su 10a-",
+      "quantity": 31,
+      "unit_rate": null,
+      "amount": 27899.69
+    },
+    {
+      "description": "Early News M-F 5-6:30p",
+      "quantity": 20,
+      "unit_rate": null,
+      "amount": 14916.8
+    }
+  ],
+  "issues": [
+    "The image appears cropped/cut off at the bottom \u2014 only the top portion of the document is visible, so totals, currency code, and any additional line items beyond the two shown may exist but are not captured.",
+    "The description of the first line item ('Midday Rotator M-Su 10a-') ends in a dash, suggesting the time range text continues off the right edge or below the crop and is truncated.",
+    "No explicit document type label (e.g. 'Invoice' or 'Order') is visible in the captured portion; doc_type is inferred from the layout (sender/advertiser/agency/flight dates/rate lines typical of a media order).",
+    "No ISO currency code is printed; USD is inferred from the '$' symbol and the sender's Phoenix, AZ address."
+  ],
+  "error_detail": null,
+  "raw_response": "```json\n{\n  \"doc_type\": {\"value\": \"order\", \"confidence\": \"uncertain\"},\n  \"sender_name\": {\"value\": \"QUICKSPOT DIGITAL\", \"confidence\": \"confident\"},\n  \"doc_id\": {\"value\": \"QS-46291\", \"confidence\": \"confident\"},\n  \"doc_date\": {\"value\": \"2026-02-22\", \"confidence\": \"confident\"},\n  \"advertiser\": {\"value\": \"PaveRight Contracting\", \"confidence\": \"confident\"},\n  \"agency\": {\"value\": \"Keystone Buying Svcs\", \"confidence\": \"confident\"},\n  \"flight_start\": {\"value\": \"2026-03-04\", \"confidence\": \"confident\"},\n  \"flight_end\": {\"value\": \"2026-03-24\", \"confidence\": \"confident\"},\n  \"gross_total\": {\"value\": null, \"confidence\": \"not_present\"},\n  \"net_total\": {\"value\": null, \"confidence\": \"not_present\"},\n  \"currency\": {\"value\": \"USD\", \"confidence\": \"confident\"},\n  \"line_item_count\": {\"value\": 2, \"confidence\": \"uncertain\"},\n  \"line_items\": [\n    {\n      \"description\": \"Midday Rotator M-Su 10a-\",\n      \"quantity\": 31,\n      \"unit_rate\": null,\n      \"amount\": 27899.69\n    },\n    {\n      \"description\": \"Early News M-F 5-6:30p\",\n      \"quantity\": 20,\n      \"unit_rate\": null,\n      \"amount\": 14916.80\n    }\n  ],\n  \"issues\": [\n    \"The image appears cropped/cut off at the bottom \u2014 only the top portion of the document is visible, so totals, currency code, and any additional line items beyond the two shown may exist but are not captured.\",\n    \"The description of the first line item ('Midday Rotator M-Su 10a-') ends in a dash, suggesting the time range text continues off the right edge or below the crop and is truncated.\",\n    \"No explicit document type label (e.g. 'Invoice' or 'Order') is visible in the captured portion; doc_type is inferred from the layout (sender/advertiser/agency/flight dates/rate lines typical of a media order).\",\n    \"No ISO currency code is printed; USD is inferred from the '$' symbol and the sender's Phoenix, AZ address.\"\n  ]\n}\n```",
+  "meta": {
+    "attempts": 1,
+    "duration_s": 90.0,
+    "cost_usd": 0.186,
+    "turns": 9,
+    "prompt_hash": "a2b2d13aaef8"
+  }
+}

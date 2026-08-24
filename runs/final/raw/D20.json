@@ -1,0 +1,95 @@
+{
+  "doc_id": "D20",
+  "input_file": "D20.jpg",
+  "status": "ok",
+  "fields": {
+    "doc_type": {
+      "value": "order",
+      "confidence": "confident"
+    },
+    "sender_name": {
+      "value": "WORM Radio 88.3",
+      "confidence": "uncertain"
+    },
+    "doc_id": {
+      "value": "WQ-66837",
+      "confidence": "uncertain"
+    },
+    "doc_date": {
+      "value": "2026-07-13",
+      "confidence": "confident"
+    },
+    "advertiser": {
+      "value": "Ridgeway Furniture Outlet",
+      "confidence": "confident"
+    },
+    "agency": {
+      "value": "Anchor Media Partners",
+      "confidence": "confident"
+    },
+    "flight_start": {
+      "value": "2026-07-24",
+      "confidence": "confident"
+    },
+    "flight_end": {
+      "value": "2026-07-30",
+      "confidence": "confident"
+    },
+    "gross_total": {
+      "value": 28596.34,
+      "confidence": "confident"
+    },
+    "net_total": {
+      "value": 24306.89,
+      "confidence": "confident"
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": "confident"
+    },
+    "line_item_count": {
+      "value": 4,
+      "confidence": "confident"
+    }
+  },
+  "line_items": [
+    {
+      "description": "Prime Access M-F 7-8p",
+      "quantity": 5,
+      "unit_rate": 393.3,
+      "amount": 1966.5
+    },
+    {
+      "description": "Overnight ROS 12-6a",
+      "quantity": 19,
+      "unit_rate": 451.69,
+      "amount": 8582.11
+    },
+    {
+      "description": "Midday Rotator M-Su 10a-3p",
+      "quantity": 17,
+      "unit_rate": 857.61,
+      "amount": 14579.37
+    },
+    {
+      "description": "Primetime Rotator M-Su 8-11p",
+      "quantity": 6,
+      "unit_rate": 578.06,
+      "amount": 3468.36
+    }
+  ],
+  "issues": [
+    "Source image is scanned/photographed upside down (rotated 180 degrees), which increases risk of misreading letters/digits (e.g. W/M, 6/9) in the station call sign and contract number.",
+    "The 'ACCEPTED FOR STATION' signature and date fields at the bottom of the contract are blank/unsigned.",
+    "Gross total, net total, and all line-item extensions reconcile exactly with the printed figures, supporting confidence in the numeric fields despite the image orientation."
+  ],
+  "error_detail": null,
+  "raw_response": "```json\n{\n  \"doc_type\": {\"value\": \"order\", \"confidence\": \"confident\"},\n  \"sender_name\": {\"value\": \"WORM Radio 88.3\", \"confidence\": \"uncertain\"},\n  \"doc_id\": {\"value\": \"WQ-66837\", \"confidence\": \"uncertain\"},\n  \"doc_date\": {\"value\": \"2026-07-13\", \"confidence\": \"confident\"},\n  \"advertiser\": {\"value\": \"Ridgeway Furniture Outlet\", \"confidence\": \"confident\"},\n  \"agency\": {\"value\": \"Anchor Media Partners\", \"confidence\": \"confident\"},\n  \"flight_start\": {\"value\": \"2026-07-24\", \"confidence\": \"confident\"},\n  \"flight_end\": {\"value\": \"2026-07-30\", \"confidence\": \"confident\"},\n  \"gross_total\": {\"value\": 28596.34, \"confidence\": \"confident\"},\n  \"net_total\": {\"value\": 24306.89, \"confidence\": \"confident\"},\n  \"currency\": {\"value\": \"USD\", \"confidence\": \"confident\"},\n  \"line_item_count\": {\"value\": 4, \"confidence\": \"confident\"},\n  \"line_items\": [\n    {\"description\": \"Prime Access M-F 7-8p\", \"quantity\": 5, \"unit_rate\": 393.30, \"amount\": 1966.50},\n    {\"description\": \"Overnight ROS 12-6a\", \"quantity\": 19, \"unit_rate\": 451.69, \"amount\": 8582.11},\n    {\"description\": \"Midday Rotator M-Su 10a-3p\", \"quantity\": 17, \"unit_rate\": 857.61, \"amount\": 14579.37},\n    {\"description\": \"Primetime Rotator M-Su 8-11p\", \"quantity\": 6, \"unit_rate\": 578.06, \"amount\": 3468.36}\n  ],\n  \"issues\": [\n    \"Source image is scanned/photographed upside down (rotated 180 degrees), which increases risk of misreading letters/digits (e.g. W/M, 6/9) in the station call sign and contract number.\",\n    \"The 'ACCEPTED FOR STATION' signature and date fields at the bottom of the contract are blank/unsigned.\",\n    \"Gross total, net total, and all line-item extensions reconcile exactly with the printed figures, supporting confidence in the numeric fields despite the image orientation.\"\n  ]\n}\n```",
+  "meta": {
+    "attempts": 1,
+    "duration_s": 166.9,
+    "cost_usd": 0.325,
+    "turns": 14,
+    "prompt_hash": "a2b2d13aaef8"
+  }
+}

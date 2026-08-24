@@ -1,0 +1,70 @@
+{
+  "doc_id": "D08",
+  "input_file": "D08.jpg",
+  "status": "ok",
+  "fields": {
+    "doc_type": {
+      "value": "order",
+      "confidence": "confident"
+    },
+    "sender_name": {
+      "value": "Hollis & Reed Media Buying",
+      "confidence": "confident"
+    },
+    "doc_id": {
+      "value": "HR-17633",
+      "confidence": "confident"
+    },
+    "doc_date": {
+      "value": "2026-05-31",
+      "confidence": "confident"
+    },
+    "advertiser": {
+      "value": "Northgate Dental Group",
+      "confidence": "confident"
+    },
+    "agency": {
+      "value": "Hollis & Reed Media Buying",
+      "confidence": "confident"
+    },
+    "flight_start": {
+      "value": "2026-06-13",
+      "confidence": "confident"
+    },
+    "flight_end": {
+      "value": "2026-06-19",
+      "confidence": "confident"
+    },
+    "gross_total": {
+      "value": 31360.94,
+      "confidence": "confident"
+    },
+    "net_total": {
+      "value": null,
+      "confidence": "not_present"
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": "confident"
+    },
+    "line_item_count": {
+      "value": 0,
+      "confidence": "confident"
+    }
+  },
+  "line_items": [],
+  "issues": [
+    "Document is an authorization/order letter, not an itemized invoice or media order form; only a total spot count (57) and gross total are given, with no per-line breakdown.",
+    "No net total is stated; only the gross total is mentioned.",
+    "Agency and sender are the same entity (Hollis & Reed Media Buying acting on behalf of advertiser Northgate Dental Group)."
+  ],
+  "error_detail": null,
+  "raw_response": "```json\n{\n  \"doc_type\": {\"value\": \"order\", \"confidence\": \"confident\"},\n  \"sender_name\": {\"value\": \"Hollis & Reed Media Buying\", \"confidence\": \"confident\"},\n  \"doc_id\": {\"value\": \"HR-17633\", \"confidence\": \"confident\"},\n  \"doc_date\": {\"value\": \"2026-05-31\", \"confidence\": \"confident\"},\n  \"advertiser\": {\"value\": \"Northgate Dental Group\", \"confidence\": \"confident\"},\n  \"agency\": {\"value\": \"Hollis & Reed Media Buying\", \"confidence\": \"confident\"},\n  \"flight_start\": {\"value\": \"2026-06-13\", \"confidence\": \"confident\"},\n  \"flight_end\": {\"value\": \"2026-06-19\", \"confidence\": \"confident\"},\n  \"gross_total\": {\"value\": 31360.94, \"confidence\": \"confident\"},\n  \"net_total\": {\"value\": null, \"confidence\": \"not_present\"},\n  \"currency\": {\"value\": \"USD\", \"confidence\": \"confident\"},\n  \"line_item_count\": {\"value\": 0, \"confidence\": \"confident\"},\n  \"line_items\": [],\n  \"issues\": [\n    \"Document is an authorization/order letter, not an itemized invoice or media order form; only a total spot count (57) and gross total are given, with no per-line breakdown.\",\n    \"No net total is stated; only the gross total is mentioned.\",\n    \"Agency and sender are the same entity (Hollis & Reed Media Buying acting on behalf of advertiser Northgate Dental Group).\"\n  ]\n}\n```",
+  "meta": {
+    "attempts": 1,
+    "duration_s": 28.9,
+    "cost_usd": 0.0972,
+    "turns": 4,
+    "prompt_hash": "a2b2d13aaef8"
+  }
+}

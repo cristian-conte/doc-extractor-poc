@@ -1,0 +1,90 @@
+{
+  "doc_id": "D17",
+  "input_file": "D17.jpg",
+  "status": "ok",
+  "fields": {
+    "doc_type": {
+      "value": "order",
+      "confidence": "confident"
+    },
+    "sender_name": {
+      "value": "KTVR-TV CHANNEL 9",
+      "confidence": "confident"
+    },
+    "doc_id": {
+      "value": "70-88460",
+      "confidence": "uncertain"
+    },
+    "doc_date": {
+      "value": "2026-01-26",
+      "confidence": "uncertain"
+    },
+    "advertiser": {
+      "value": "COPPERFIELD INSURANCE",
+      "confidence": "confident"
+    },
+    "agency": {
+      "value": "ANCHOR MEDIA PARTNERS",
+      "confidence": "confident"
+    },
+    "flight_start": {
+      "value": "2026-01-26",
+      "confidence": "uncertain"
+    },
+    "flight_end": {
+      "value": "2026-02-16",
+      "confidence": "uncertain"
+    },
+    "gross_total": {
+      "value": 36855.64,
+      "confidence": "confident"
+    },
+    "net_total": {
+      "value": null,
+      "confidence": "not_present"
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": "confident"
+    },
+    "line_item_count": {
+      "value": 3,
+      "confidence": "confident"
+    }
+  },
+  "line_items": [
+    {
+      "description": "Midday Rotator M-Su 10a-3p",
+      "quantity": 33,
+      "unit_rate": 735.04,
+      "amount": 24256.32
+    },
+    {
+      "description": "Prime Access M-F 7-8p",
+      "quantity": 8,
+      "unit_rate": 332.52,
+      "amount": 2668.16
+    },
+    {
+      "description": "Morning Drive M-F 6-10a",
+      "quantity": 21,
+      "unit_rate": 326.24,
+      "amount": 6891.16
+    }
+  ],
+  "issues": [
+    "Scan is heavily degraded by speckle/noise across the whole page, making many digits (order number, dates, rates, and line-item amounts) unreliable to read with certainty.",
+    "The three line-item amounts as read do not sum cleanly to the stated GROSS AMOUNT of $36,855.64 (they sum to roughly $33,815), suggesting one or more digits were misread due to noise.",
+    "Document shows a 'LESS AGY COMM 15%' deduction line but no explicit net/payable total is printed, so net_total is marked not_present rather than being calculated.",
+    "Currency is inferred as USD from the $ symbol and Texas (Amarillo, TX) location; no explicit currency code is printed on the document."
+  ],
+  "error_detail": null,
+  "raw_response": "```json\n{\n  \"doc_type\": {\"value\": \"order\", \"confidence\": \"confident\"},\n  \"sender_name\": {\"value\": \"KTVR-TV CHANNEL 9\", \"confidence\": \"confident\"},\n  \"doc_id\": {\"value\": \"70-88460\", \"confidence\": \"uncertain\"},\n  \"doc_date\": {\"value\": \"2026-01-26\", \"confidence\": \"uncertain\"},\n  \"advertiser\": {\"value\": \"COPPERFIELD INSURANCE\", \"confidence\": \"confident\"},\n  \"agency\": {\"value\": \"ANCHOR MEDIA PARTNERS\", \"confidence\": \"confident\"},\n  \"flight_start\": {\"value\": \"2026-01-26\", \"confidence\": \"uncertain\"},\n  \"flight_end\": {\"value\": \"2026-02-16\", \"confidence\": \"uncertain\"},\n  \"gross_total\": {\"value\": 36855.64, \"confidence\": \"confident\"},\n  \"net_total\": {\"value\": null, \"confidence\": \"not_present\"},\n  \"currency\": {\"value\": \"USD\", \"confidence\": \"confident\"},\n  \"line_item_count\": {\"value\": 3, \"confidence\": \"confident\"},\n  \"line_items\": [\n    {\"description\": \"Midday Rotator M-Su 10a-3p\", \"quantity\": 33, \"unit_rate\": 735.04, \"amount\": 24256.32},\n    {\"description\": \"Prime Access M-F 7-8p\", \"quantity\": 8, \"unit_rate\": 332.52, \"amount\": 2668.16},\n    {\"description\": \"Morning Drive M-F 6-10a\", \"quantity\": 21, \"unit_rate\": 326.24, \"amount\": 6891.16}\n  ],\n  \"issues\": [\n    \"Scan is heavily degraded by speckle/noise across the whole page, making many digits (order number, dates, rates, and line-item amounts) unreliable to read with certainty.\",\n    \"The three line-item amounts as read do not sum cleanly to the stated GROSS AMOUNT of $36,855.64 (they sum to roughly $33,815), suggesting one or more digits were misread due to noise.\",\n    \"Document shows a 'LESS AGY COMM 15%' deduction line but no explicit net/payable total is printed, so net_total is marked not_present rather than being calculated.\",\n    \"Currency is inferred as USD from the $ symbol and Texas (Amarillo, TX) location; no explicit currency code is printed on the document.\"\n  ]\n}\n```",
+  "meta": {
+    "attempts": 1,
+    "duration_s": 124.6,
+    "cost_usd": 0.2844,
+    "turns": 16,
+    "prompt_hash": "a2b2d13aaef8"
+  }
+}

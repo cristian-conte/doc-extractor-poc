@@ -1,0 +1,81 @@
+{
+  "doc_id": "D03",
+  "input_file": "D03.jpg",
+  "status": "ok",
+  "fields": {
+    "doc_type": {
+      "value": "order",
+      "confidence": "confident"
+    },
+    "sender_name": {
+      "value": "KTVR-TV CHANNEL 9",
+      "confidence": "confident"
+    },
+    "doc_id": {
+      "value": "11-26782",
+      "confidence": "confident"
+    },
+    "doc_date": {
+      "value": "2026-04-22",
+      "confidence": "confident"
+    },
+    "advertiser": {
+      "value": "HILLCREST MOTORS",
+      "confidence": "confident"
+    },
+    "agency": {
+      "value": "BRIGHTLINE MEDIA",
+      "confidence": "confident"
+    },
+    "flight_start": {
+      "value": "2026-05-03",
+      "confidence": "confident"
+    },
+    "flight_end": {
+      "value": "2026-05-09",
+      "confidence": "confident"
+    },
+    "gross_total": {
+      "value": 19629.69,
+      "confidence": "confident"
+    },
+    "net_total": {
+      "value": 16685.24,
+      "confidence": "confident"
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": "confident"
+    },
+    "line_item_count": {
+      "value": 2,
+      "confidence": "confident"
+    }
+  },
+  "line_items": [
+    {
+      "description": "Early News M-F 5-6:30p",
+      "quantity": 31,
+      "unit_rate": 593.37,
+      "amount": 18394.47
+    },
+    {
+      "description": "Morning Drive M-F 6-10a",
+      "quantity": 7,
+      "unit_rate": 176.46,
+      "amount": 1235.22
+    }
+  ],
+  "issues": [
+    "The line labeled 'LESS AGY COMM 15%' shows $16,685.24, which is actually the net amount after the 15% commission is deducted from the $19,629.69 gross (not the commission amount itself, which would be $2,944.45). The label is misleading but the net_total value extracted reflects the actual payable amount."
+  ],
+  "error_detail": null,
+  "raw_response": "```json\n{\n  \"doc_type\": {\"value\": \"order\", \"confidence\": \"confident\"},\n  \"sender_name\": {\"value\": \"KTVR-TV CHANNEL 9\", \"confidence\": \"confident\"},\n  \"doc_id\": {\"value\": \"11-26782\", \"confidence\": \"confident\"},\n  \"doc_date\": {\"value\": \"2026-04-22\", \"confidence\": \"confident\"},\n  \"advertiser\": {\"value\": \"HILLCREST MOTORS\", \"confidence\": \"confident\"},\n  \"agency\": {\"value\": \"BRIGHTLINE MEDIA\", \"confidence\": \"confident\"},\n  \"flight_start\": {\"value\": \"2026-05-03\", \"confidence\": \"confident\"},\n  \"flight_end\": {\"value\": \"2026-05-09\", \"confidence\": \"confident\"},\n  \"gross_total\": {\"value\": 19629.69, \"confidence\": \"confident\"},\n  \"net_total\": {\"value\": 16685.24, \"confidence\": \"confident\"},\n  \"currency\": {\"value\": \"USD\", \"confidence\": \"confident\"},\n  \"line_item_count\": {\"value\": 2, \"confidence\": \"confident\"},\n  \"line_items\": [\n    {\"description\": \"Early News M-F 5-6:30p\", \"quantity\": 31, \"unit_rate\": 593.37, \"amount\": 18394.47},\n    {\"description\": \"Morning Drive M-F 6-10a\", \"quantity\": 7, \"unit_rate\": 176.46, \"amount\": 1235.22}\n  ],\n  \"issues\": [\n    \"The line labeled 'LESS AGY COMM 15%' shows $16,685.24, which is actually the net amount after the 15% commission is deducted from the $19,629.69 gross (not the commission amount itself, which would be $2,944.45). The label is misleading but the net_total value extracted reflects the actual payable amount.\"\n  ]\n}\n```",
+  "meta": {
+    "attempts": 1,
+    "duration_s": 31.6,
+    "cost_usd": 0.0976,
+    "turns": 4,
+    "prompt_hash": "a2b2d13aaef8"
+  }
+}

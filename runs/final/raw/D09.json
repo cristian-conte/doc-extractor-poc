@@ -1,0 +1,85 @@
+{
+  "doc_id": "D09",
+  "input_file": "D09.pdf",
+  "status": "ok",
+  "fields": {
+    "doc_type": {
+      "value": "confirmation",
+      "confidence": "confident"
+    },
+    "sender_name": {
+      "value": "WQRM Radio 88.3",
+      "confidence": "confident"
+    },
+    "doc_id": {
+      "value": "WQ-97811",
+      "confidence": "confident"
+    },
+    "doc_date": {
+      "value": "2026-03-16",
+      "confidence": "confident"
+    },
+    "advertiser": {
+      "value": "Val's Home & Garden",
+      "confidence": "confident"
+    },
+    "agency": {
+      "value": "Brightline Media",
+      "confidence": "confident"
+    },
+    "flight_start": {
+      "value": "2026-03-21",
+      "confidence": "confident"
+    },
+    "flight_end": {
+      "value": "2026-03-27",
+      "confidence": "confident"
+    },
+    "gross_total": {
+      "value": 24571.97,
+      "confidence": "confident"
+    },
+    "net_total": {
+      "value": 20886.17,
+      "confidence": "confident"
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": "confident"
+    },
+    "line_item_count": {
+      "value": 3,
+      "confidence": "confident"
+    }
+  },
+  "line_items": [
+    {
+      "description": "Midday Rotator M-Su 10a-3p",
+      "quantity": 11,
+      "unit_rate": 787.56,
+      "amount": 8663.16
+    },
+    {
+      "description": "Early News M-F 5-6:30p",
+      "quantity": 25,
+      "unit_rate": 454.43,
+      "amount": 11360.75
+    },
+    {
+      "description": "Weekend Sports Sa-Su 12-6p",
+      "quantity": 6,
+      "unit_rate": 758.01,
+      "amount": 4548.06
+    }
+  ],
+  "issues": [],
+  "error_detail": null,
+  "raw_response": "```json\n{\n  \"doc_type\": {\"value\": \"confirmation\", \"confidence\": \"confident\"},\n  \"sender_name\": {\"value\": \"WQRM Radio 88.3\", \"confidence\": \"confident\"},\n  \"doc_id\": {\"value\": \"WQ-97811\", \"confidence\": \"confident\"},\n  \"doc_date\": {\"value\": \"2026-03-16\", \"confidence\": \"confident\"},\n  \"advertiser\": {\"value\": \"Val's Home & Garden\", \"confidence\": \"confident\"},\n  \"agency\": {\"value\": \"Brightline Media\", \"confidence\": \"confident\"},\n  \"flight_start\": {\"value\": \"2026-03-21\", \"confidence\": \"confident\"},\n  \"flight_end\": {\"value\": \"2026-03-27\", \"confidence\": \"confident\"},\n  \"gross_total\": {\"value\": 24571.97, \"confidence\": \"confident\"},\n  \"net_total\": {\"value\": 20886.17, \"confidence\": \"confident\"},\n  \"currency\": {\"value\": \"USD\", \"confidence\": \"confident\"},\n  \"line_item_count\": {\"value\": 3, \"confidence\": \"confident\"},\n  \"line_items\": [\n    {\n      \"description\": {\"value\": \"Midday Rotator M-Su 10a-3p\", \"confidence\": \"confident\"},\n      \"quantity\": {\"value\": 11, \"confidence\": \"confident\"},\n      \"unit_rate\": {\"value\": 787.56, \"confidence\": \"confident\"},\n      \"amount\": {\"value\": 8663.16, \"confidence\": \"confident\"}\n    },\n    {\n      \"description\": {\"value\": \"Early News M-F 5-6:30p\", \"confidence\": \"confident\"},\n      \"quantity\": {\"value\": 25, \"confidence\": \"confident\"},\n      \"unit_rate\": {\"value\": 454.43, \"confidence\": \"confident\"},\n      \"amount\": {\"value\": 11360.75, \"confidence\": \"confident\"}\n    },\n    {\n      \"description\": {\"value\": \"Weekend Sports Sa-Su 12-6p\", \"confidence\": \"confident\"},\n      \"quantity\": {\"value\": 6, \"confidence\": \"confident\"},\n      \"unit_rate\": {\"value\": 758.01, \"confidence\": \"confident\"},\n      \"amount\": {\"value\": 4548.06, \"confidence\": \"confident\"}\n    }\n  ]\n}\n```",
+  "meta": {
+    "attempts": 1,
+    "duration_s": 22.9,
+    "cost_usd": 0.0823,
+    "turns": 4,
+    "prompt_hash": "a2b2d13aaef8"
+  }
+}

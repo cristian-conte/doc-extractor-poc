@@ -1,0 +1,84 @@
+{
+  "doc_id": "D12",
+  "input_file": "D12.pdf",
+  "status": "ok",
+  "fields": {
+    "doc_type": {
+      "value": "invoice",
+      "confidence": "uncertain"
+    },
+    "sender_name": {
+      "value": "Quickspot Digital",
+      "confidence": "confident"
+    },
+    "doc_id": {
+      "value": "QS-63369",
+      "confidence": "confident"
+    },
+    "doc_date": {
+      "value": "2026-06-06",
+      "confidence": "confident"
+    },
+    "advertiser": {
+      "value": "Ferber Appliance Depot",
+      "confidence": "confident"
+    },
+    "agency": {
+      "value": "Keystone Buying Svcs",
+      "confidence": "confident"
+    },
+    "flight_start": {
+      "value": "2026-06-09",
+      "confidence": "confident"
+    },
+    "flight_end": {
+      "value": "2026-07-06",
+      "confidence": "confident"
+    },
+    "gross_total": {
+      "value": 55450.19,
+      "confidence": "confident"
+    },
+    "net_total": {
+      "value": 47132.66,
+      "confidence": "confident"
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": "uncertain"
+    },
+    "line_item_count": {
+      "value": 2,
+      "confidence": "confident"
+    }
+  },
+  "line_items": [
+    {
+      "description": "Midday Rotator M-Su 10a-",
+      "quantity": 39,
+      "unit_rate": null,
+      "amount": 34662.03
+    },
+    {
+      "description": "Morning Drive M-F 6-10a",
+      "quantity": 32,
+      "unit_rate": null,
+      "amount": 20788.16
+    }
+  ],
+  "issues": [
+    "Document has no explicit 'invoice'/'order'/'confirmation' label; classified as invoice based on total/net/payment structure.",
+    "First line item description ('Midday Rotator M-Su 10a-') appears truncated with a trailing dash, likely cutting off the end time of the daypart.",
+    "Currency is not stated explicitly; inferred as USD from the '$' symbol and Phoenix, AZ sender address.",
+    "No per-spot unit rate is given for either line item, only a quantity and a total amount."
+  ],
+  "error_detail": null,
+  "raw_response": "```json\n{\n  \"doc_type\": {\"value\": \"invoice\", \"confidence\": \"uncertain\"},\n  \"sender_name\": {\"value\": \"Quickspot Digital\", \"confidence\": \"confident\"},\n  \"doc_id\": {\"value\": \"QS-63369\", \"confidence\": \"confident\"},\n  \"doc_date\": {\"value\": \"2026-06-06\", \"confidence\": \"confident\"},\n  \"advertiser\": {\"value\": \"Ferber Appliance Depot\", \"confidence\": \"confident\"},\n  \"agency\": {\"value\": \"Keystone Buying Svcs\", \"confidence\": \"confident\"},\n  \"flight_start\": {\"value\": \"2026-06-09\", \"confidence\": \"confident\"},\n  \"flight_end\": {\"value\": \"2026-07-06\", \"confidence\": \"confident\"},\n  \"gross_total\": {\"value\": 55450.19, \"confidence\": \"confident\"},\n  \"net_total\": {\"value\": 47132.66, \"confidence\": \"confident\"},\n  \"currency\": {\"value\": \"USD\", \"confidence\": \"uncertain\"},\n  \"line_item_count\": {\"value\": 2, \"confidence\": \"confident\"},\n  \"line_items\": [\n    {\n      \"description\": \"Midday Rotator M-Su 10a-\",\n      \"quantity\": 39,\n      \"unit_rate\": null,\n      \"amount\": 34662.03\n    },\n    {\n      \"description\": \"Morning Drive M-F 6-10a\",\n      \"quantity\": 32,\n      \"unit_rate\": null,\n      \"amount\": 20788.16\n    }\n  ],\n  \"issues\": [\n    \"Document has no explicit 'invoice'/'order'/'confirmation' label; classified as invoice based on total/net/payment structure.\",\n    \"First line item description ('Midday Rotator M-Su 10a-') appears truncated with a trailing dash, likely cutting off the end time of the daypart.\",\n    \"Currency is not stated explicitly; inferred as USD from the '$' symbol and Phoenix, AZ sender address.\",\n    \"No per-spot unit rate is given for either line item, only a quantity and a total amount.\"\n  ]\n}\n```",
+  "meta": {
+    "attempts": 1,
+    "duration_s": 27.4,
+    "cost_usd": 0.0885,
+    "turns": 4,
+    "prompt_hash": "a2b2d13aaef8"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "doc_id": "D21",
+  "input_file": "D21.pdf",
+  "status": "ok",
+  "fields": {
+    "doc_type": {
+      "value": "other",
+      "confidence": "confident"
+    },
+    "sender_name": {
+      "value": "Hollis & Reed Media Buying",
+      "confidence": "confident"
+    },
+    "doc_id": {
+      "value": null,
+      "confidence": "not_present"
+    },
+    "doc_date": {
+      "value": "2026-02-19",
+      "confidence": "confident"
+    },
+    "advertiser": {
+      "value": null,
+      "confidence": "not_present"
+    },
+    "agency": {
+      "value": "Hollis & Reed Media Buying",
+      "confidence": "uncertain"
+    },
+    "flight_start": {
+      "value": null,
+      "confidence": "not_present"
+    },
+    "flight_end": {
+      "value": null,
+      "confidence": "not_present"
+    },
+    "gross_total": {
+      "value": null,
+      "confidence": "not_present"
+    },
+    "net_total": {
+      "value": null,
+      "confidence": "not_present"
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": "uncertain"
+    },
+    "line_item_count": {
+      "value": 0,
+      "confidence": "confident"
+    }
+  },
+  "line_items": [],
+  "issues": [
+    "This is a general notice letter about an office relocation, not a commercial order, invoice, or booking confirmation.",
+    "The $4,318,000.00 figure refers to aggregate placements processed 'last year' across all clients, not a billable total for this document \u2014 not extracted as gross_total.",
+    "The document is signed by Hollis & Reed Media Buying (a media buying agency) but does not name a specific advertiser or a distinct agency/advertiser relationship, so 'agency' is only tentatively self-referential."
+  ],
+  "error_detail": null,
+  "raw_response": "```json\n{\n  \"doc_type\": {\"value\": \"other\", \"confidence\": \"confident\"},\n  \"sender_name\": {\"value\": \"Hollis & Reed Media Buying\", \"confidence\": \"confident\"},\n  \"doc_id\": {\"value\": null, \"confidence\": \"not_present\"},\n  \"doc_date\": {\"value\": \"2026-02-19\", \"confidence\": \"confident\"},\n  \"advertiser\": {\"value\": null, \"confidence\": \"not_present\"},\n  \"agency\": {\"value\": \"Hollis & Reed Media Buying\", \"confidence\": \"uncertain\"},\n  \"flight_start\": {\"value\": null, \"confidence\": \"not_present\"},\n  \"flight_end\": {\"value\": null, \"confidence\": \"not_present\"},\n  \"gross_total\": {\"value\": null, \"confidence\": \"not_present\"},\n  \"net_total\": {\"value\": null, \"confidence\": \"not_present\"},\n  \"currency\": {\"value\": \"USD\", \"confidence\": \"uncertain\"},\n  \"line_item_count\": {\"value\": 0, \"confidence\": \"confident\"},\n  \"line_items\": [],\n  \"issues\": [\n    \"This is a general notice letter about an office relocation, not a commercial order, invoice, or booking confirmation.\",\n    \"The $4,318,000.00 figure refers to aggregate placements processed 'last year' across all clients, not a billable total for this document \u2014 not extracted as gross_total.\",\n    \"The document is signed by Hollis & Reed Media Buying (a media buying agency) but does not name a specific advertiser or a distinct agency/advertiser relationship, so 'agency' is only tentatively self-referential.\"\n  ]\n}\n```",
+  "meta": {
+    "attempts": 1,
+    "duration_s": 22.1,
+    "cost_usd": 0.0884,
+    "turns": 5,
+    "prompt_hash": "a2b2d13aaef8"
+  }
+}

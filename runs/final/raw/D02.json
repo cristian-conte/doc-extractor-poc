@@ -1,0 +1,82 @@
+{
+  "doc_id": "D02",
+  "input_file": "D02.pdf",
+  "status": "ok",
+  "fields": {
+    "doc_type": {
+      "value": "invoice",
+      "confidence": "confident"
+    },
+    "sender_name": {
+      "value": "Meridian Broadcast Group",
+      "confidence": "confident"
+    },
+    "doc_id": {
+      "value": "MBG-48958",
+      "confidence": "confident"
+    },
+    "doc_date": {
+      "value": "2026-01-27",
+      "confidence": "confident"
+    },
+    "advertiser": {
+      "value": "Lakeshore Veterinary",
+      "confidence": "confident"
+    },
+    "agency": {
+      "value": null,
+      "confidence": "not_present"
+    },
+    "flight_start": {
+      "value": "2026-01-31",
+      "confidence": "confident"
+    },
+    "flight_end": {
+      "value": "2026-02-06",
+      "confidence": "confident"
+    },
+    "gross_total": {
+      "value": 29727.32,
+      "confidence": "confident"
+    },
+    "net_total": {
+      "value": null,
+      "confidence": "not_present"
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": "confident"
+    },
+    "line_item_count": {
+      "value": 2,
+      "confidence": "confident"
+    }
+  },
+  "line_items": [
+    {
+      "description": "Late News M-F 11-11:35p",
+      "quantity": 36,
+      "unit_rate": 235.33,
+      "amount": 8471.88
+    },
+    {
+      "description": "Prime Access M-F 7-8p",
+      "quantity": 34,
+      "unit_rate": 625.16,
+      "amount": 21255.44
+    }
+  ],
+  "issues": [
+    "Bill-to party (Lakeshore Veterinary) is treated as the advertiser; no separate agency is listed on the document.",
+    "Currency symbol is $ with no explicit ISO code; USD inferred from sender location (Cleveland, OH)."
+  ],
+  "error_detail": null,
+  "raw_response": "```json\n{\n  \"doc_type\": {\"value\": \"invoice\", \"confidence\": \"confident\"},\n  \"sender_name\": {\"value\": \"Meridian Broadcast Group\", \"confidence\": \"confident\"},\n  \"doc_id\": {\"value\": \"MBG-48958\", \"confidence\": \"confident\"},\n  \"doc_date\": {\"value\": \"2026-01-27\", \"confidence\": \"confident\"},\n  \"advertiser\": {\"value\": \"Lakeshore Veterinary\", \"confidence\": \"confident\"},\n  \"agency\": {\"value\": null, \"confidence\": \"not_present\"},\n  \"flight_start\": {\"value\": \"2026-01-31\", \"confidence\": \"confident\"},\n  \"flight_end\": {\"value\": \"2026-02-06\", \"confidence\": \"confident\"},\n  \"gross_total\": {\"value\": 29727.32, \"confidence\": \"confident\"},\n  \"net_total\": {\"value\": null, \"confidence\": \"not_present\"},\n  \"currency\": {\"value\": \"USD\", \"confidence\": \"confident\"},\n  \"line_item_count\": {\"value\": 2, \"confidence\": \"confident\"},\n  \"line_items\": [\n    {\"description\": \"Late News M-F 11-11:35p\", \"quantity\": 36, \"unit_rate\": 235.33, \"amount\": 8471.88},\n    {\"description\": \"Prime Access M-F 7-8p\", \"quantity\": 34, \"unit_rate\": 625.16, \"amount\": 21255.44}\n  ],\n  \"issues\": [\n    \"Bill-to party (Lakeshore Veterinary) is treated as the advertiser; no separate agency is listed on the document.\",\n    \"Currency symbol is $ with no explicit ISO code; USD inferred from sender location (Cleveland, OH).\"\n  ]\n}\n```",
+  "meta": {
+    "attempts": 1,
+    "duration_s": 22.2,
+    "cost_usd": 0.0777,
+    "turns": 4,
+    "prompt_hash": "a2b2d13aaef8"
+  }
+}

@@ -1,0 +1,1265 @@
+{
+  "headline": {
+    "documents": 21,
+    "straight_through": {
+      "count": 14,
+      "rate": 0.6666666666666666,
+      "wilson_95": [
+        0.45373075657210293,
+        0.8280546356731631
+      ]
+    },
+    "escaped_critical_error": {
+      "count": 1,
+      "rate_of_green": 0.07142857142857142,
+      "rate_of_all": 0.047619047619047616,
+      "wilson_95_of_green": [
+        0.012721886112291636,
+        0.3146926955395781
+      ],
+      "doc_ids": [
+        "D09"
+      ]
+    },
+    "true_automation": {
+      "count": 13,
+      "rate": 0.6190476190476191
+    },
+    "review_recall": {
+      "caught": 5,
+      "needed": 6,
+      "rate": 0.8333333333333334,
+      "missed_doc_ids": [
+        "D09"
+      ]
+    },
+    "review_precision": {
+      "justified": 5,
+      "flagged": 7,
+      "rate": 0.7142857142857143,
+      "over_flagged_doc_ids": [
+        "D01",
+        "D12"
+      ]
+    }
+  },
+  "per_field": {
+    "doc_type": {
+      "critical": true,
+      "correct": 19,
+      "wrong": 2,
+      "missing": 0,
+      "invented": 0,
+      "correct_absent": 0,
+      "accuracy": 0.9047619047619048
+    },
+    "sender_name": {
+      "critical": true,
+      "correct": 19,
+      "wrong": 1,
+      "missing": 0,
+      "invented": 0,
+      "correct_absent": 0,
+      "accuracy": 0.95
+    },
+    "doc_id": {
+      "critical": true,
+      "correct": 20,
+      "wrong": 0,
+      "missing": 0,
+      "invented": 0,
+      "correct_absent": 0,
+      "accuracy": 1.0
+    },
+    "doc_date": {
+      "critical": true,
+      "correct": 19,
+      "wrong": 1,
+      "missing": 0,
+      "invented": 0,
+      "correct_absent": 0,
+      "accuracy": 0.95
+    },
+    "advertiser": {
+      "critical": true,
+      "correct": 20,
+      "wrong": 0,
+      "missing": 0,
+      "invented": 0,
+      "correct_absent": 0,
+      "accuracy": 1.0
+    },
+    "flight_start": {
+      "critical": true,
+      "correct": 19,
+      "wrong": 1,
+      "missing": 0,
+      "invented": 0,
+      "correct_absent": 0,
+      "accuracy": 0.95
+    },
+    "flight_end": {
+      "critical": true,
+      "correct": 20,
+      "wrong": 0,
+      "missing": 0,
+      "invented": 0,
+      "correct_absent": 0,
+      "accuracy": 1.0
+    },
+    "gross_total": {
+      "critical": true,
+      "correct": 19,
+      "wrong": 0,
+      "missing": 0,
+      "invented": 0,
+      "correct_absent": 1,
+      "accuracy": 1.0
+    },
+    "currency": {
+      "critical": true,
+      "correct": 20,
+      "wrong": 0,
+      "missing": 0,
+      "invented": 0,
+      "correct_absent": 0,
+      "accuracy": 1.0
+    },
+    "net_total": {
+      "critical": false,
+      "correct": 15,
+      "wrong": 0,
+      "missing": 1,
+      "invented": 0,
+      "correct_absent": 4,
+      "accuracy": 0.9375
+    },
+    "agency": {
+      "critical": false,
+      "correct": 16,
+      "wrong": 1,
+      "missing": 0,
+      "invented": 1,
+      "correct_absent": 2,
+      "accuracy": 0.8888888888888888
+    },
+    "line_item_count": {
+      "critical": false,
+      "correct": 18,
+      "wrong": 2,
+      "missing": 0,
+      "invented": 0,
+      "correct_absent": 0,
+      "accuracy": 0.9
+    }
+  },
+  "by_condition": {
+    "digital": {
+      "documents": 7,
+      "green": 3,
+      "straight_through_rate": 0.42857142857142855,
+      "critical_field_accuracy": 1.0
+    },
+    "fax": {
+      "documents": 2,
+      "green": 1,
+      "straight_through_rate": 0.5,
+      "critical_field_accuracy": 0.8888888888888888
+    },
+    "photo": {
+      "documents": 4,
+      "green": 3,
+      "straight_through_rate": 0.75,
+      "critical_field_accuracy": 0.9714285714285714
+    },
+    "scan": {
+      "documents": 8,
+      "green": 7,
+      "straight_through_rate": 0.875,
+      "critical_field_accuracy": 0.9722222222222222
+    }
+  },
+  "by_container": {
+    "jpg": {
+      "documents": 10,
+      "green": 7,
+      "straight_through_rate": 0.7,
+      "critical_field_accuracy": 0.9550561797752809
+    },
+    "pdf": {
+      "documents": 7,
+      "green": 3,
+      "straight_through_rate": 0.42857142857142855,
+      "critical_field_accuracy": 1.0
+    },
+    "pdf_image": {
+      "documents": 2,
+      "green": 2,
+      "straight_through_rate": 1.0,
+      "critical_field_accuracy": 0.9444444444444444
+    },
+    "png": {
+      "documents": 2,
+      "green": 2,
+      "straight_through_rate": 1.0,
+      "critical_field_accuracy": 1.0
+    }
+  },
+  "by_sender": {
+    "europa": {
+      "documents": 2,
+      "green": 2,
+      "straight_through_rate": 1.0,
+      "critical_field_accuracy": 1.0
+    },
+    "hollis": {
+      "documents": 3,
+      "green": 2,
+      "straight_through_rate": 0.6666666666666666,
+      "critical_field_accuracy": 1.0
+    },
+    "kvue": {
+      "documents": 3,
+      "green": 2,
+      "straight_through_rate": 0.6666666666666666,
+      "critical_field_accuracy": 0.9259259259259259
+    },
+    "meridian": {
+      "documents": 4,
+      "green": 3,
+      "straight_through_rate": 0.75,
+      "critical_field_accuracy": 1.0
+    },
+    "nab": {
+      "documents": 3,
+      "green": 2,
+      "straight_through_rate": 0.6666666666666666,
+      "critical_field_accuracy": 0.9259259259259259
+    },
+    "natrep": {
+      "documents": 3,
+      "green": 2,
+      "straight_through_rate": 0.6666666666666666,
+      "critical_field_accuracy": 1.0
+    },
+    "quickspot": {
+      "documents": 3,
+      "green": 1,
+      "straight_through_rate": 0.3333333333333333,
+      "critical_field_accuracy": 0.9615384615384616
+    }
+  },
+  "severity_sweep": {
+    "D02": {
+      "severity": 2,
+      "tier": "GREEN",
+      "critical_field_accuracy": 1.0
+    },
+    "D15": {
+      "severity": 1,
+      "tier": "GREEN",
+      "critical_field_accuracy": 1.0
+    },
+    "D16": {
+      "severity": 3,
+      "tier": "GREEN",
+      "critical_field_accuracy": 1.0
+    }
+  },
+  "planted": [
+    {
+      "doc_id": "D17",
+      "trap": "illegible",
+      "expected": "review_expected",
+      "tier": "RED",
+      "primary_reason": "FULL_MANUAL",
+      "caught": true,
+      "critical_errors": [
+        "doc_date",
+        "flight_start"
+      ]
+    },
+    {
+      "doc_id": "D18",
+      "trap": "cropped_total",
+      "expected": "review_expected",
+      "tier": "AMBER",
+      "primary_reason": "MISSING_REQUIRED",
+      "caught": true,
+      "critical_errors": [
+        "doc_type"
+      ]
+    },
+    {
+      "doc_id": "D19",
+      "trap": "inconsistent_total",
+      "expected": "review_expected",
+      "tier": "AMBER",
+      "primary_reason": "SUM_MISMATCH",
+      "caught": true,
+      "critical_errors": []
+    },
+    {
+      "doc_id": "D20",
+      "trap": "rotated_180",
+      "expected": "review_expected",
+      "tier": "AMBER",
+      "primary_reason": "LOW_CONFIDENCE",
+      "caught": true,
+      "critical_errors": [
+        "sender_name"
+      ]
+    },
+    {
+      "doc_id": "D21",
+      "trap": "out_of_scope",
+      "expected": "review_expected",
+      "tier": "RED",
+      "primary_reason": "OUT_OF_SCOPE",
+      "caught": true,
+      "critical_errors": []
+    }
+  ],
+  "reason_codes": {
+    "LOW_CONFIDENCE": 11,
+    "MISSING_REQUIRED": 6,
+    "SUM_MISMATCH": 4
+  },
+  "economics": {
+    "cost_usd_total": 2.615,
+    "cost_usd_mean": 0.1245,
+    "latency_s_mean": 49.4,
+    "latency_s_p95": 153.1
+  },
+  "rows": [
+    {
+      "doc_id": "D01",
+      "tier": "AMBER",
+      "primary_reason": "LOW_CONFIDENCE",
+      "flags": [
+        {
+          "code": "LOW_CONFIDENCE",
+          "field": "currency",
+          "detail": "reader was unsure"
+        }
+      ],
+      "summary": "currency: reader was unsure",
+      "outcomes": {
+        "doc_type": "correct",
+        "sender_name": "correct",
+        "doc_id": "correct",
+        "doc_date": "correct",
+        "advertiser": "correct",
+        "flight_start": "correct",
+        "flight_end": "correct",
+        "gross_total": "correct",
+        "currency": "correct",
+        "net_total": "correct",
+        "agency": "correct",
+        "line_item_count": "correct"
+      },
+      "critical_errors": [],
+      "clean": true,
+      "needed_review": false,
+      "corpus": {
+        "sender_family": "meridian",
+        "container": "pdf",
+        "condition": "digital",
+        "severity": 0,
+        "trap": null,
+        "expected_outcome": "green_ok"
+      },
+      "meta": {
+        "attempts": 1,
+        "duration_s": 22.3,
+        "cost_usd": 0.0797,
+        "turns": 4,
+        "prompt_hash": "a2b2d13aaef8"
+      }
+    },
+    {
+      "doc_id": "D02",
+      "tier": "GREEN",
+      "primary_reason": null,
+      "flags": [],
+      "summary": "No checks failed.",
+      "outcomes": {
+        "doc_type": "correct",
+        "sender_name": "correct",
+        "doc_id": "correct",
+        "doc_date": "correct",
+        "advertiser": "correct",
+        "flight_start": "correct",
+        "flight_end": "correct",
+        "gross_total": "correct",
+        "currency": "correct",
+        "net_total": "correct_absent",
+        "agency": "correct_absent",
+        "line_item_count": "correct"
+      },
+      "critical_errors": [],
+      "clean": true,
+      "needed_review": false,
+      "corpus": {
+        "sender_family": "meridian",
+        "container": "pdf_image",
+        "condition": "scan",
+        "severity": 2,
+        "trap": null,
+        "expected_outcome": "green_ok"
+      },
+      "meta": {
+        "attempts": 1,
+        "duration_s": 22.2,
+        "cost_usd": 0.0777,
+        "turns": 4,
+        "prompt_hash": "a2b2d13aaef8"
+      }
+    },
+    {
+      "doc_id": "D03",
+      "tier": "GREEN",
+      "primary_reason": null,
+      "flags": [],
+      "summary": "No checks failed.",
+      "outcomes": {
+        "doc_type": "correct",
+        "sender_name": "correct",
+        "doc_id": "correct",
+        "doc_date": "correct",
+        "advertiser": "correct",
+        "flight_start": "correct",
+        "flight_end": "correct",
+        "gross_total": "correct",
+        "currency": "correct",
+        "net_total": "correct",
+        "agency": "correct",
+        "line_item_count": "correct"
+      },
+      "critical_errors": [],
+      "clean": true,
+      "needed_review": false,
+      "corpus": {
+        "sender_family": "kvue",
+        "container": "jpg",
+        "condition": "scan",
+        "severity": 2,
+        "trap": null,
+        "expected_outcome": "green_ok"
+      },
+      "meta": {
+        "attempts": 1,
+        "duration_s": 31.6,
+        "cost_usd": 0.0976,
+        "turns": 4,
+        "prompt_hash": "a2b2d13aaef8"
+      }
+    },
+    {
+      "doc_id": "D04",
+      "tier": "GREEN",
+      "primary_reason": null,
+      "flags": [],
+      "summary": "No checks failed.",
+      "outcomes": {
+        "doc_type": "correct",
+        "sender_name": "correct",
+        "doc_id": "correct",
+        "doc_date": "correct",
+        "advertiser": "correct",
+        "flight_start": "correct",
+        "flight_end": "correct",
+        "gross_total": "correct",
+        "currency": "correct",
+        "net_total": "correct",
+        "agency": "correct",
+        "line_item_count": "correct"
+      },
+      "critical_errors": [],
+      "clean": true,
+      "needed_review": false,
+      "corpus": {
+        "sender_family": "kvue",
+        "container": "jpg",
+        "condition": "photo",
+        "severity": 2,
+        "trap": null,
+        "expected_outcome": "green_ok"
+      },
+      "meta": {
+        "attempts": 1,
+        "duration_s": 36.0,
+        "cost_usd": 0.089,
+        "turns": 3,
+        "prompt_hash": "a2b2d13aaef8"
+      }
+    },
+    {
+      "doc_id": "D05",
+      "tier": "GREEN",
+      "primary_reason": null,
+      "flags": [],
+      "summary": "No checks failed.",
+      "outcomes": {
+        "doc_type": "correct",
+        "sender_name": "correct",
+        "doc_id": "correct",
+        "doc_date": "correct",
+        "advertiser": "correct",
+        "flight_start": "correct",
+        "flight_end": "correct",
+        "gross_total": "correct",
+        "currency": "correct",
+        "net_total": "correct",
+        "agency": "correct",
+        "line_item_count": "correct"
+      },
+      "critical_errors": [],
+      "clean": true,
+      "needed_review": false,
+      "corpus": {
+        "sender_family": "natrep",
+        "container": "pdf",
+        "condition": "digital",
+        "severity": 0,
+        "trap": "distractors",
+        "expected_outcome": "green_ok"
+      },
+      "meta": {
+        "attempts": 1,
+        "duration_s": 46.6,
+        "cost_usd": 0.1222,
+        "turns": 6,
+        "prompt_hash": "a2b2d13aaef8"
+      }
+    },
+    {
+      "doc_id": "D06",
+      "tier": "GREEN",
+      "primary_reason": null,
+      "flags": [],
+      "summary": "No checks failed.",
+      "outcomes": {
+        "doc_type": "correct",
+        "sender_name": "correct",
+        "doc_id": "correct",
+        "doc_date": "correct",
+        "advertiser": "correct",
+        "flight_start": "correct",
+        "flight_end": "correct",
+        "gross_total": "correct",
+        "currency": "correct",
+        "net_total": "correct_absent",
+        "agency": "correct_absent",
+        "line_item_count": "correct"
+      },
+      "critical_errors": [],
+      "clean": true,
+      "needed_review": false,
+      "corpus": {
+        "sender_family": "natrep",
+        "container": "png",
+        "condition": "scan",
+        "severity": 3,
+        "trap": "distractors",
+        "expected_outcome": "green_ok"
+      },
+      "meta": {
+        "attempts": 1,
+        "duration_s": 153.1,
+        "cost_usd": 0.242,
+        "turns": 13,
+        "prompt_hash": "a2b2d13aaef8"
+      }
+    },
+    {
+      "doc_id": "D07",
+      "tier": "GREEN",
+      "primary_reason": null,
+      "flags": [],
+      "summary": "No checks failed.",
+      "outcomes": {
+        "doc_type": "correct",
+        "sender_name": "correct",
+        "doc_id": "correct",
+        "doc_date": "correct",
+        "advertiser": "correct",
+        "flight_start": "correct",
+        "flight_end": "correct",
+        "gross_total": "correct",
+        "currency": "correct",
+        "net_total": "correct",
+        "agency": "wrong",
+        "line_item_count": "wrong"
+      },
+      "critical_errors": [],
+      "clean": true,
+      "needed_review": false,
+      "corpus": {
+        "sender_family": "hollis",
+        "container": "pdf",
+        "condition": "digital",
+        "severity": 0,
+        "trap": "prose",
+        "expected_outcome": "green_ok"
+      },
+      "meta": {
+        "attempts": 1,
+        "duration_s": 26.3,
+        "cost_usd": 0.0946,
+        "turns": 5,
+        "prompt_hash": "a2b2d13aaef8"
+      }
+    },
+    {
+      "doc_id": "D08",
+      "tier": "GREEN",
+      "primary_reason": null,
+      "flags": [],
+      "summary": "No checks failed.",
+      "outcomes": {
+        "doc_type": "correct",
+        "sender_name": "correct",
+        "doc_id": "correct",
+        "doc_date": "correct",
+        "advertiser": "correct",
+        "flight_start": "correct",
+        "flight_end": "correct",
+        "gross_total": "correct",
+        "currency": "correct",
+        "net_total": "correct_absent",
+        "agency": "invented",
+        "line_item_count": "wrong"
+      },
+      "critical_errors": [],
+      "clean": true,
+      "needed_review": false,
+      "corpus": {
+        "sender_family": "hollis",
+        "container": "jpg",
+        "condition": "photo",
+        "severity": 2,
+        "trap": "prose",
+        "expected_outcome": "green_ok"
+      },
+      "meta": {
+        "attempts": 1,
+        "duration_s": 28.9,
+        "cost_usd": 0.0972,
+        "turns": 4,
+        "prompt_hash": "a2b2d13aaef8"
+      }
+    },
+    {
+      "doc_id": "D09",
+      "tier": "GREEN",
+      "primary_reason": null,
+      "flags": [],
+      "summary": "No checks failed.",
+      "outcomes": {
+        "doc_type": "wrong",
+        "sender_name": "correct",
+        "doc_id": "correct",
+        "doc_date": "correct",
+        "advertiser": "correct",
+        "flight_start": "correct",
+        "flight_end": "correct",
+        "gross_total": "correct",
+        "currency": "correct",
+        "net_total": "correct",
+        "agency": "correct",
+        "line_item_count": "correct"
+      },
+      "critical_errors": [
+        "doc_type"
+      ],
+      "clean": false,
+      "needed_review": true,
+      "corpus": {
+        "sender_family": "nab",
+        "container": "pdf_image",
+        "condition": "scan",
+        "severity": 1,
+        "trap": null,
+        "expected_outcome": "green_ok"
+      },
+      "meta": {
+        "attempts": 1,
+        "duration_s": 22.9,
+        "cost_usd": 0.0823,
+        "turns": 4,
+        "prompt_hash": "a2b2d13aaef8"
+      }
+    },
+    {
+      "doc_id": "D10",
+      "tier": "GREEN",
+      "primary_reason": null,
+      "flags": [],
+      "summary": "No checks failed.",
+      "outcomes": {
+        "doc_type": "correct",
+        "sender_name": "correct",
+        "doc_id": "correct",
+        "doc_date": "correct",
+        "advertiser": "correct",
+        "flight_start": "correct",
+        "flight_end": "correct",
+        "gross_total": "correct",
+        "currency": "correct",
+        "net_total": "correct",
+        "agency": "correct",
+        "line_item_count": "correct"
+      },
+      "critical_errors": [],
+      "clean": true,
+      "needed_review": false,
+      "corpus": {
+        "sender_family": "nab",
+        "container": "jpg",
+        "condition": "fax",
+        "severity": 2,
+        "trap": null,
+        "expected_outcome": "green_ok"
+      },
+      "meta": {
+        "attempts": 1,
+        "duration_s": 34.9,
+        "cost_usd": 0.1058,
+        "turns": 4,
+        "prompt_hash": "a2b2d13aaef8"
+      }
+    },
+    {
+      "doc_id": "D11",
+      "tier": "GREEN",
+      "primary_reason": null,
+      "flags": [],
+      "summary": "No checks failed.",
+      "outcomes": {
+        "doc_type": "correct",
+        "sender_name": "correct",
+        "doc_id": "correct",
+        "doc_date": "correct",
+        "advertiser": "correct",
+        "flight_start": "correct",
+        "flight_end": "correct",
+        "gross_total": "correct",
+        "currency": "correct",
+        "net_total": "correct",
+        "agency": "correct",
+        "line_item_count": "correct"
+      },
+      "critical_errors": [],
+      "clean": true,
+      "needed_review": false,
+      "corpus": {
+        "sender_family": "quickspot",
+        "container": "png",
+        "condition": "photo",
+        "severity": 3,
+        "trap": null,
+        "expected_outcome": "green_ok"
+      },
+      "meta": {
+        "attempts": 1,
+        "duration_s": 29.2,
+        "cost_usd": 0.0877,
+        "turns": 3,
+        "prompt_hash": "a2b2d13aaef8"
+      }
+    },
+    {
+      "doc_id": "D12",
+      "tier": "AMBER",
+      "primary_reason": "LOW_CONFIDENCE",
+      "flags": [
+        {
+          "code": "LOW_CONFIDENCE",
+          "field": "doc_type",
+          "detail": "reader was unsure"
+        },
+        {
+          "code": "LOW_CONFIDENCE",
+          "field": "currency",
+          "detail": "reader was unsure"
+        }
+      ],
+      "summary": "doc_type: reader was unsure; currency: reader was unsure",
+      "outcomes": {
+        "doc_type": "correct",
+        "sender_name": "correct",
+        "doc_id": "correct",
+        "doc_date": "correct",
+        "advertiser": "correct",
+        "flight_start": "correct",
+        "flight_end": "correct",
+        "gross_total": "correct",
+        "currency": "correct",
+        "net_total": "correct",
+        "agency": "correct",
+        "line_item_count": "correct"
+      },
+      "critical_errors": [],
+      "clean": true,
+      "needed_review": false,
+      "corpus": {
+        "sender_family": "quickspot",
+        "container": "pdf",
+        "condition": "digital",
+        "severity": 0,
+        "trap": null,
+        "expected_outcome": "green_ok"
+      },
+      "meta": {
+        "attempts": 1,
+        "duration_s": 27.4,
+        "cost_usd": 0.0885,
+        "turns": 4,
+        "prompt_hash": "a2b2d13aaef8"
+      }
+    },
+    {
+      "doc_id": "D13",
+      "tier": "GREEN",
+      "primary_reason": null,
+      "flags": [],
+      "summary": "No checks failed.",
+      "outcomes": {
+        "doc_type": "correct",
+        "sender_name": "correct",
+        "doc_id": "correct",
+        "doc_date": "correct",
+        "advertiser": "correct",
+        "flight_start": "correct",
+        "flight_end": "correct",
+        "gross_total": "correct",
+        "currency": "correct",
+        "net_total": "correct",
+        "agency": "correct",
+        "line_item_count": "correct"
+      },
+      "critical_errors": [],
+      "clean": true,
+      "needed_review": false,
+      "corpus": {
+        "sender_family": "europa",
+        "container": "pdf",
+        "condition": "digital",
+        "severity": 0,
+        "trap": "eu_numbers",
+        "expected_outcome": "green_ok"
+      },
+      "meta": {
+        "attempts": 1,
+        "duration_s": 27.0,
+        "cost_usd": 0.0831,
+        "turns": 4,
+        "prompt_hash": "a2b2d13aaef8"
+      }
+    },
+    {
+      "doc_id": "D14",
+      "tier": "GREEN",
+      "primary_reason": null,
+      "flags": [],
+      "summary": "No checks failed.",
+      "outcomes": {
+        "doc_type": "correct",
+        "sender_name": "correct",
+        "doc_id": "correct",
+        "doc_date": "correct",
+        "advertiser": "correct",
+        "flight_start": "correct",
+        "flight_end": "correct",
+        "gross_total": "correct",
+        "currency": "correct",
+        "net_total": "correct",
+        "agency": "correct",
+        "line_item_count": "correct"
+      },
+      "critical_errors": [],
+      "clean": true,
+      "needed_review": false,
+      "corpus": {
+        "sender_family": "europa",
+        "container": "jpg",
+        "condition": "scan",
+        "severity": 2,
+        "trap": "eu_numbers",
+        "expected_outcome": "green_ok"
+      },
+      "meta": {
+        "attempts": 1,
+        "duration_s": 23.6,
+        "cost_usd": 0.0841,
+        "turns": 3,
+        "prompt_hash": "a2b2d13aaef8"
+      }
+    },
+    {
+      "doc_id": "D15",
+      "tier": "GREEN",
+      "primary_reason": null,
+      "flags": [],
+      "summary": "No checks failed.",
+      "outcomes": {
+        "doc_type": "correct",
+        "sender_name": "correct",
+        "doc_id": "correct",
+        "doc_date": "correct",
+        "advertiser": "correct",
+        "flight_start": "correct",
+        "flight_end": "correct",
+        "gross_total": "correct",
+        "currency": "correct",
+        "net_total": "correct",
+        "agency": "correct",
+        "line_item_count": "correct"
+      },
+      "critical_errors": [],
+      "clean": true,
+      "needed_review": false,
+      "corpus": {
+        "sender_family": "meridian",
+        "container": "jpg",
+        "condition": "scan",
+        "severity": 1,
+        "trap": "sweep",
+        "expected_outcome": "green_ok"
+      },
+      "meta": {
+        "attempts": 1,
+        "duration_s": 27.0,
+        "cost_usd": 0.1003,
+        "turns": 4,
+        "prompt_hash": "a2b2d13aaef8"
+      }
+    },
+    {
+      "doc_id": "D16",
+      "tier": "GREEN",
+      "primary_reason": null,
+      "flags": [],
+      "summary": "No checks failed.",
+      "outcomes": {
+        "doc_type": "correct",
+        "sender_name": "correct",
+        "doc_id": "correct",
+        "doc_date": "correct",
+        "advertiser": "correct",
+        "flight_start": "correct",
+        "flight_end": "correct",
+        "gross_total": "correct",
+        "currency": "correct",
+        "net_total": "correct",
+        "agency": "correct",
+        "line_item_count": "correct"
+      },
+      "critical_errors": [],
+      "clean": true,
+      "needed_review": false,
+      "corpus": {
+        "sender_family": "meridian",
+        "container": "jpg",
+        "condition": "scan",
+        "severity": 3,
+        "trap": "sweep",
+        "expected_outcome": "green_ok"
+      },
+      "meta": {
+        "attempts": 1,
+        "duration_s": 30.7,
+        "cost_usd": 0.0967,
+        "turns": 4,
+        "prompt_hash": "a2b2d13aaef8"
+      }
+    },
+    {
+      "doc_id": "D17",
+      "tier": "RED",
+      "primary_reason": "FULL_MANUAL",
+      "flags": [
+        {
+          "code": "SUM_MISMATCH",
+          "field": "gross_total",
+          "detail": "line items sum to 33815.64, document states 36855.64"
+        },
+        {
+          "code": "SUM_MISMATCH",
+          "field": "line_items[1]",
+          "detail": "8 x 332.52 = 2660.16, line states 2668.16"
+        },
+        {
+          "code": "SUM_MISMATCH",
+          "field": "line_items[2]",
+          "detail": "21 x 326.24 = 6851.04, line states 6891.16"
+        },
+        {
+          "code": "LOW_CONFIDENCE",
+          "field": "doc_id",
+          "detail": "reader was unsure"
+        },
+        {
+          "code": "LOW_CONFIDENCE",
+          "field": "doc_date",
+          "detail": "reader was unsure"
+        },
+        {
+          "code": "LOW_CONFIDENCE",
+          "field": "flight_start",
+          "detail": "reader was unsure"
+        },
+        {
+          "code": "LOW_CONFIDENCE",
+          "field": "flight_end",
+          "detail": "reader was unsure"
+        }
+      ],
+      "summary": "7 fields in doubt (doc_date, doc_id, flight_end, flight_start, gross_total, line_items[1], line_items[2]); re-key rather than review.",
+      "outcomes": {
+        "doc_type": "correct",
+        "sender_name": "correct",
+        "doc_id": "correct",
+        "doc_date": "wrong",
+        "advertiser": "correct",
+        "flight_start": "wrong",
+        "flight_end": "correct",
+        "gross_total": "correct",
+        "currency": "correct",
+        "net_total": "missing",
+        "agency": "correct",
+        "line_item_count": "correct"
+      },
+      "critical_errors": [
+        "doc_date",
+        "flight_start"
+      ],
+      "clean": false,
+      "needed_review": true,
+      "corpus": {
+        "sender_family": "kvue",
+        "container": "jpg",
+        "condition": "fax",
+        "severity": 3,
+        "trap": "illegible",
+        "expected_outcome": "review_expected"
+      },
+      "meta": {
+        "attempts": 1,
+        "duration_s": 124.6,
+        "cost_usd": 0.2844,
+        "turns": 16,
+        "prompt_hash": "a2b2d13aaef8"
+      }
+    },
+    {
+      "doc_id": "D18",
+      "tier": "AMBER",
+      "primary_reason": "MISSING_REQUIRED",
+      "flags": [
+        {
+          "code": "MISSING_REQUIRED",
+          "field": "gross_total",
+          "detail": "not extracted"
+        },
+        {
+          "code": "LOW_CONFIDENCE",
+          "field": "doc_type",
+          "detail": "reader was unsure"
+        }
+      ],
+      "summary": "gross_total: not extracted; doc_type: reader was unsure",
+      "outcomes": {
+        "doc_type": "wrong",
+        "sender_name": "correct",
+        "doc_id": "correct",
+        "doc_date": "correct",
+        "advertiser": "correct",
+        "flight_start": "correct",
+        "flight_end": "correct",
+        "gross_total": "correct_absent",
+        "currency": "correct",
+        "net_total": "correct_absent",
+        "agency": "correct",
+        "line_item_count": "correct"
+      },
+      "critical_errors": [
+        "doc_type"
+      ],
+      "clean": false,
+      "needed_review": true,
+      "corpus": {
+        "sender_family": "quickspot",
+        "container": "jpg",
+        "condition": "photo",
+        "severity": 2,
+        "trap": "cropped_total",
+        "expected_outcome": "review_expected"
+      },
+      "meta": {
+        "attempts": 1,
+        "duration_s": 90.0,
+        "cost_usd": 0.186,
+        "turns": 9,
+        "prompt_hash": "a2b2d13aaef8"
+      }
+    },
+    {
+      "doc_id": "D19",
+      "tier": "AMBER",
+      "primary_reason": "SUM_MISMATCH",
+      "flags": [
+        {
+          "code": "SUM_MISMATCH",
+          "field": "gross_total",
+          "detail": "line items sum to 23491.40, document states 23114.15"
+        }
+      ],
+      "summary": "gross_total: line items sum to 23491.40, document states 23114.15",
+      "outcomes": {
+        "doc_type": "correct",
+        "sender_name": "correct",
+        "doc_id": "correct",
+        "doc_date": "correct",
+        "advertiser": "correct",
+        "flight_start": "correct",
+        "flight_end": "correct",
+        "gross_total": "correct",
+        "currency": "correct",
+        "net_total": "correct",
+        "agency": "correct",
+        "line_item_count": "correct"
+      },
+      "critical_errors": [],
+      "clean": true,
+      "needed_review": true,
+      "corpus": {
+        "sender_family": "natrep",
+        "container": "pdf",
+        "condition": "digital",
+        "severity": 0,
+        "trap": "inconsistent_total",
+        "expected_outcome": "review_expected"
+      },
+      "meta": {
+        "attempts": 1,
+        "duration_s": 44.1,
+        "cost_usd": 0.1027,
+        "turns": 4,
+        "prompt_hash": "a2b2d13aaef8"
+      }
+    },
+    {
+      "doc_id": "D20",
+      "tier": "AMBER",
+      "primary_reason": "LOW_CONFIDENCE",
+      "flags": [
+        {
+          "code": "LOW_CONFIDENCE",
+          "field": "sender_name",
+          "detail": "reader was unsure"
+        },
+        {
+          "code": "LOW_CONFIDENCE",
+          "field": "doc_id",
+          "detail": "reader was unsure"
+        }
+      ],
+      "summary": "sender_name: reader was unsure; doc_id: reader was unsure",
+      "outcomes": {
+        "doc_type": "correct",
+        "sender_name": "wrong",
+        "doc_id": "correct",
+        "doc_date": "correct",
+        "advertiser": "correct",
+        "flight_start": "correct",
+        "flight_end": "correct",
+        "gross_total": "correct",
+        "currency": "correct",
+        "net_total": "correct",
+        "agency": "correct",
+        "line_item_count": "correct"
+      },
+      "critical_errors": [
+        "sender_name"
+      ],
+      "clean": false,
+      "needed_review": true,
+      "corpus": {
+        "sender_family": "nab",
+        "container": "jpg",
+        "condition": "scan",
+        "severity": 2,
+        "trap": "rotated_180",
+        "expected_outcome": "review_expected"
+      },
+      "meta": {
+        "attempts": 1,
+        "duration_s": 166.9,
+        "cost_usd": 0.325,
+        "turns": 14,
+        "prompt_hash": "a2b2d13aaef8"
+      }
+    },
+    {
+      "doc_id": "D21",
+      "tier": "RED",
+      "primary_reason": "OUT_OF_SCOPE",
+      "flags": [
+        {
+          "code": "MISSING_REQUIRED",
+          "field": "doc_id",
+          "detail": "not extracted"
+        },
+        {
+          "code": "MISSING_REQUIRED",
+          "field": "advertiser",
+          "detail": "not extracted"
+        },
+        {
+          "code": "MISSING_REQUIRED",
+          "field": "flight_start",
+          "detail": "not extracted"
+        },
+        {
+          "code": "MISSING_REQUIRED",
+          "field": "flight_end",
+          "detail": "not extracted"
+        },
+        {
+          "code": "MISSING_REQUIRED",
+          "field": "gross_total",
+          "detail": "not extracted"
+        },
+        {
+          "code": "LOW_CONFIDENCE",
+          "field": "currency",
+          "detail": "reader was unsure"
+        }
+      ],
+      "summary": "Not an order, invoice or confirmation.",
+      "outcomes": {
+        "doc_type": "correct"
+      },
+      "critical_errors": [],
+      "clean": false,
+      "needed_review": true,
+      "corpus": {
+        "sender_family": "hollis",
+        "container": "pdf",
+        "condition": "digital",
+        "severity": 0,
+        "trap": "out_of_scope",
+        "expected_outcome": "review_expected"
+      },
+      "meta": {
+        "attempts": 1,
+        "duration_s": 22.1,
+        "cost_usd": 0.0884,
+        "turns": 5,
+        "prompt_hash": "a2b2d13aaef8"
+      }
+    }
+  ]
+}

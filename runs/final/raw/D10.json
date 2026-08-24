@@ -1,0 +1,94 @@
+{
+  "doc_id": "D10",
+  "input_file": "D10.jpg",
+  "status": "ok",
+  "fields": {
+    "doc_type": {
+      "value": "order",
+      "confidence": "confident"
+    },
+    "sender_name": {
+      "value": "WQRM Radio 88.3",
+      "confidence": "confident"
+    },
+    "doc_id": {
+      "value": "WQ-14488",
+      "confidence": "confident"
+    },
+    "doc_date": {
+      "value": "2026-01-01",
+      "confidence": "confident"
+    },
+    "advertiser": {
+      "value": "Ferber Appliance Depot",
+      "confidence": "confident"
+    },
+    "agency": {
+      "value": "Keystone Buying Svcs",
+      "confidence": "confident"
+    },
+    "flight_start": {
+      "value": "2026-01-21",
+      "confidence": "confident"
+    },
+    "flight_end": {
+      "value": "2026-02-03",
+      "confidence": "confident"
+    },
+    "gross_total": {
+      "value": 18225.22,
+      "confidence": "confident"
+    },
+    "net_total": {
+      "value": 15491.44,
+      "confidence": "confident"
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": "confident"
+    },
+    "line_item_count": {
+      "value": 4,
+      "confidence": "confident"
+    }
+  },
+  "line_items": [
+    {
+      "description": "Late News M-F 11-11:35p",
+      "quantity": 36,
+      "unit_rate": 77.77,
+      "amount": 2799.72
+    },
+    {
+      "description": "Morning Drive M-F 6-10a",
+      "quantity": 26,
+      "unit_rate": 346.19,
+      "amount": 9000.94
+    },
+    {
+      "description": "Weekend Sports Sa-Su 12-6p",
+      "quantity": 7,
+      "unit_rate": 288.0,
+      "amount": 2016.0
+    },
+    {
+      "description": "Late News M-F 11-11:35p",
+      "quantity": 18,
+      "unit_rate": 244.92,
+      "amount": 4408.56
+    }
+  ],
+  "issues": [
+    "Two line items share the identical description 'Late News M-F 11-11:35p' with different rates/quantities \u2014 likely two distinct rate periods or dayparts within the flight, but the document does not distinguish them further.",
+    "Document is titled 'STATION ADVERTISING CONTRACT' and includes an unsigned 'ACCEPTED FOR STATION' signature/date line, so doc_type is classified as 'order' (an unaccepted insertion order) rather than 'confirmation'."
+  ],
+  "error_detail": null,
+  "raw_response": "I've verified the arithmetic mentally already matches the printed totals. Here's the extraction:\n\n```json\n{\n  \"doc_type\": {\"value\": \"order\", \"confidence\": \"confident\"},\n  \"sender_name\": {\"value\": \"WQRM Radio 88.3\", \"confidence\": \"confident\"},\n  \"doc_id\": {\"value\": \"WQ-14488\", \"confidence\": \"confident\"},\n  \"doc_date\": {\"value\": \"2026-01-01\", \"confidence\": \"confident\"},\n  \"advertiser\": {\"value\": \"Ferber Appliance Depot\", \"confidence\": \"confident\"},\n  \"agency\": {\"value\": \"Keystone Buying Svcs\", \"confidence\": \"confident\"},\n  \"flight_start\": {\"value\": \"2026-01-21\", \"confidence\": \"confident\"},\n  \"flight_end\": {\"value\": \"2026-02-03\", \"confidence\": \"confident\"},\n  \"gross_total\": {\"value\": 18225.22, \"confidence\": \"confident\"},\n  \"net_total\": {\"value\": 15491.44, \"confidence\": \"confident\"},\n  \"currency\": {\"value\": \"USD\", \"confidence\": \"confident\"},\n  \"line_item_count\": {\"value\": 4, \"confidence\": \"confident\"},\n  \"line_items\": [\n    {\"description\": \"Late News M-F 11-11:35p\", \"quantity\": 36, \"unit_rate\": 77.77, \"amount\": 2799.72},\n    {\"description\": \"Morning Drive M-F 6-10a\", \"quantity\": 26, \"unit_rate\": 346.19, \"amount\": 9000.94},\n    {\"description\": \"Weekend Sports Sa-Su 12-6p\", \"quantity\": 7, \"unit_rate\": 288.00, \"amount\": 2016.00},\n    {\"description\": \"Late News M-F 11-11:35p\", \"quantity\": 18, \"unit_rate\": 244.92, \"amount\": 4408.56}\n  ],\n  \"issues\": [\n    \"Two line items share the identical description 'Late News M-F 11-11:35p' with different rates/quantities \u2014 likely two distinct rate periods or dayparts within the flight, but the document does not distinguish them further.\",\n    \"Document is titled 'STATION ADVERTISING CONTRACT' and includes an unsigned 'ACCEPTED FOR STATION' signature/date line, so doc_type is classified as 'order' (an unaccepted insertion order) rather than 'confirmation'.\"\n  ]\n}\n```",
+  "meta": {
+    "attempts": 1,
+    "duration_s": 34.9,
+    "cost_usd": 0.1058,
+    "turns": 4,
+    "prompt_hash": "a2b2d13aaef8"
+  }
+}
