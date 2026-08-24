@@ -9,11 +9,13 @@ It is a two-and-a-half hour build. It is meant to be argued with, not deployed.
 
 ```
 ./run.sh corpus     # build 21 documents from 7 senders, with ground truth
-./run.sh extract    # read them  (makes model calls, ~$2.80 for the corpus)
+./run.sh extract    # read them  (makes model calls, ~$2.60 for the corpus)
 ./run.sh eval       # score, tune, render the review queue  (free, uses cache)
 ```
 
----
+Setup is at the bottom under [Running it locally](#running-it-locally). The
+short version: `./run.sh eval` replays the committed model responses and
+reproduces every number below offline, free, with no API key.
 
 ## The number
 
@@ -346,3 +348,74 @@ The two image-only PDFs carry a library-generated identifier that changes each
 time; their rendered content is identical. Extraction is not deterministic —
 the same document can be read slightly differently on different runs, which is
 part of why the interval on the headline number matters.
+
+---
+
+## Running it locally
+
+Tested on Linux and written to be portable; macOS should be identical. Needs
+Python 3.9 or newer.
+
+```bash
+git clone https://github.com/cristian-conte/Tools.git
+cd Tools
+git checkout claude/document-extraction-prototype-2zq1aq
+cd Document-Extraction-Prototype
+
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+The virtual environment is not optional on a recent Mac: Homebrew and system
+Pythons are marked externally managed, and a bare `pip install` fails with
+`error: externally-managed-environment`.
+
+**Start here — reproduce every number in this README. Offline, free, seconds.**
+The raw model responses for all 21 documents are committed in `runs/final/raw/`,
+so scoring and reporting replay them. No API key, no network, no cost.
+
+```bash
+./run.sh eval
+open runs/final/report.html      # the review queue
+```
+
+You should get exactly the numbers quoted above: 67% straight through, one
+escape (D09). If you do not, something is wrong and I would like to know.
+
+**Rebuild the documents.** Regenerates all 21 files and their ground truth from
+the fixed seed. Still no model calls.
+
+```bash
+./run.sh corpus
+```
+
+**Actually re-read the documents.** This is the only step that needs the CLI and
+the only one that costs anything — about $2.60 and ten minutes for the corpus at
+five workers.
+
+```bash
+npm i -g @anthropic-ai/claude-code   # if you do not already have it
+claude                               # once, to sign in
+./run.sh extract && ./run.sh eval
+```
+
+If the CLI is installed somewhere unusual (nvm, fnm, volta), point at it
+directly rather than fighting PATH:
+
+```bash
+CLAUDE_BIN=/full/path/to/claude ./run.sh extract
+```
+
+Expect the headline to move a little between runs. The same document does not
+always read the same way — D09 has already been observed classifying correctly
+on one run and incorrectly on another, from an identical file. That variance is
+what the 45–83% interval is expressing.
+
+Useful extras:
+
+```bash
+python3 sensitivity.py --run final          # what moving the gate costs
+python3 run_pipeline.py --only D17,D20 --run scratch   # work on a subset
+```
+
+---

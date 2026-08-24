@@ -95,11 +95,11 @@ def needed_review(record, outcomes):
 
 
 def evaluate(run_dir: Path):
-    records = [json.loads(l) for l in (run_dir / "results.jsonl").read_text().splitlines() if l]
+    records = [json.loads(l) for l in (run_dir / "results.jsonl").read_text(encoding="utf-8").splitlines() if l]
     rows = []
 
     for record in records:
-        truth = json.loads((TRUTH_DIR / f"{record['doc_id']}.json").read_text())
+        truth = json.loads((TRUTH_DIR / f"{record['doc_id']}.json").read_text(encoding="utf-8"))
         outcomes = score_fields(record, truth)
         errs = critical_errors(outcomes)
         rows.append({
@@ -330,9 +330,9 @@ def main():
     run_dir = ROOT / "runs" / args.run
 
     metrics = evaluate(run_dir)
-    (run_dir / "metrics.json").write_text(json.dumps(metrics, indent=2, default=str))
+    (run_dir / "metrics.json").write_text(json.dumps(metrics, indent=2, default=str), encoding="utf-8")
     md = render_markdown(metrics)
-    (run_dir / "metrics.md").write_text(md)
+    (run_dir / "metrics.md").write_text(md, encoding="utf-8")
     print(md)
 
 

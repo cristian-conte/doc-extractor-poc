@@ -53,10 +53,10 @@ def regate(record, drop_critical=frozenset(), ignore_codes=frozenset()):
 
 
 def run(run_dir: Path):
-    records = [json.loads(l) for l in (run_dir / "results.jsonl").read_text().splitlines() if l]
+    records = [json.loads(l) for l in (run_dir / "results.jsonl").read_text(encoding="utf-8").splitlines() if l]
     scored = []
     for record in records:
-        truth = json.loads((TRUTH_DIR / f"{record['doc_id']}.json").read_text())
+        truth = json.loads((TRUTH_DIR / f"{record['doc_id']}.json").read_text(encoding="utf-8"))
         outcomes = evaluate.score_fields(record, truth)
         scored.append({
             "record": record,
@@ -109,5 +109,5 @@ if __name__ == "__main__":
     run_dir = ROOT / "runs" / args.run
     rows, n = run(run_dir)
     text = render(rows, n)
-    (run_dir / "sensitivity.md").write_text(text)
+    (run_dir / "sensitivity.md").write_text(text, encoding="utf-8")
     print(text)

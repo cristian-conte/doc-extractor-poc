@@ -30,7 +30,7 @@ RUNS = ROOT / "runs"
 
 
 def load_manifest():
-    return json.loads((CORPUS / "manifest.json").read_text())
+    return json.loads((CORPUS / "manifest.json").read_text(encoding="utf-8"))
 
 
 def process(entry, run_dir, from_cache, timeout):
@@ -39,11 +39,11 @@ def process(entry, run_dir, from_cache, timeout):
     cache = run_dir / "raw" / f"{doc_id}.json"
 
     if from_cache and cache.exists():
-        record = json.loads(cache.read_text())
+        record = json.loads(cache.read_text(encoding="utf-8"))
     else:
         record = extract_one(path, doc_id, timeout=timeout)
         cache.parent.mkdir(parents=True, exist_ok=True)
-        cache.write_text(json.dumps(record, indent=2))
+        cache.write_text(json.dumps(record, indent=2), encoding="utf-8")
         print(f"  {doc_id}  {record['status']:<12} "
               f"{record['meta']['duration_s']:>5.1f}s  ${record['meta']['cost_usd']:.3f}",
               flush=True)
@@ -94,7 +94,7 @@ def main():
 
     records.sort(key=lambda r: r["doc_id"])
     out = run_dir / "results.jsonl"
-    with out.open("w") as fh:
+    with out.open("w", encoding="utf-8") as fh:
         for record in records:
             fh.write(json.dumps(record) + "\n")
 

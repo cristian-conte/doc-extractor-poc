@@ -22,7 +22,7 @@ from datetime import date, timedelta
 from decimal import Decimal
 from pathlib import Path
 
-import fitz  # PyMuPDF
+import pymupdf as fitz
 from PIL import Image
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.units import inch
@@ -132,7 +132,9 @@ def fmt_date(d: date, style: str) -> str:
         "us_slash": d.strftime("%m/%d/%y"),
         "us_dash": d.strftime("%m-%d-%Y"),
         "iso": d.isoformat(),
-        "long": d.strftime("%B %-d, %Y"),
+        # Built explicitly rather than with %-d: the no-pad flag is a
+        # glibc/BSD extension, not portable.
+        "long": f"{d.strftime('%B')} {d.day}, {d.year}",
         "eu_dot": d.strftime("%d.%m.%Y"),
     }[style]
 
@@ -831,7 +833,7 @@ def build():
             "fields": truth,
             "not_visible_fields": not_visible,
             "line_sum": str(facts["line_sum"]),
-        }, indent=2))
+        }, indent=2), encoding="utf-8")
 
         manifest.append({
             "doc_id": doc_id,
@@ -850,7 +852,7 @@ def build():
         print(f"  {doc_id}  {family:<10} {container:<9} {condition:<8} "
               f"sev{sev}  {trap or '-'}")
 
-    (HERE / "manifest.json").write_text(json.dumps(manifest, indent=2))
+    (HERE / "manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     write_manifest_md(manifest)
     shutil.rmtree(WORK, ignore_errors=True)
 
@@ -896,7 +898,7 @@ def write_manifest_md(manifest):
     for trap, note in TRAP_NOTES.items():
         ids = [m["doc_id"] for m in manifest if m["trap"] == trap]
         lines.append(f"- **{trap}** ({', '.join(ids)}) — {note}")
-    (HERE / "MANIFEST.md").write_text("\n".join(lines) + "\n")
+    (HERE / "MANIFEST.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

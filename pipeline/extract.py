@@ -96,6 +96,22 @@ ambiguous labels, parts of the page missing or cut off.
 
 PROMPT_HASH = hashlib.sha256(PROMPT.encode()).hexdigest()[:12]
 
+# Resolve the CLI once, rather than letting 21 documents each fail with a bare
+# FileNotFoundError. shutil.which honours PATHEXT on Windows and finds the real
+# binary behind a node version manager shim on macOS/Linux.
+CLAUDE_BIN = os.environ.get("CLAUDE_BIN") or shutil.which("claude")
+
+
+def require_cli():
+    if not CLAUDE_BIN:
+        raise RuntimeError(
+            "The `claude` CLI was not found on PATH.\n"
+            "  install:  npm i -g @anthropic-ai/claude-code   (then run `claude` once to sign in)\n"
+            "  or point at it directly:  CLAUDE_BIN=/full/path/to/claude\n"
+            "Only extraction needs it -- `./run.sh eval` replays the committed "
+            "responses in runs/final/raw/ and needs no CLI and no API key."
+        )
+
 _FENCE = re.compile(r"^\s*```(?:json)?\s*|\s*```\s*$", re.MULTILINE)
 
 
@@ -124,7 +140,7 @@ def _run_cli(doc_path: Path, timeout: int):
         local = workdir / doc_path.name
         shutil.copy2(doc_path, local)
         cmd = [
-            "claude", "-p", PROMPT.format(filename=doc_path.name),
+            CLAUDE_BIN, "-p", PROMPT.format(filename=doc_path.name),
             "--allowedTools", "Read",
             "--output-format", "json",
         ]
@@ -149,6 +165,7 @@ def _run_cli(doc_path: Path, timeout: int):
 
 def extract_one(doc_path: Path, doc_id: str, timeout: int = None) -> dict:
     """Extract one document, retrying once before giving up."""
+    require_cli()
     timeout = timeout or THRESHOLDS["timeout_seconds"]
     attempts, last_error, started = 0, None, time.time()
     cost, turns, raw_text = 0.0, 0, ""

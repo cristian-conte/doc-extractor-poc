@@ -16,7 +16,7 @@ import json
 import sys
 from pathlib import Path
 
-import fitz  # PyMuPDF
+import pymupdf as fitz
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parent
@@ -93,13 +93,14 @@ code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12px }
 
 
 def build(run_dir: Path, out_path: Path):
-    records = [json.loads(l) for l in (run_dir / "results.jsonl").read_text().splitlines() if l]
+    records = [json.loads(l) for l in (run_dir / "results.jsonl").read_text(encoding="utf-8").splitlines() if l]
     records.sort(key=lambda r: (TIER_ORDER[r["triage"]["tier"]], r["doc_id"]))
     counts = {t: sum(1 for r in records if r["triage"]["tier"] == t)
               for t in ("GREEN", "AMBER", "RED")}
     total = len(records)
 
     parts = [
+        '<meta charset="utf-8">',
         "<title>Extraction Review Queue</title>",
         f"<style>{CSS}</style>",
         "<div class=wrap>",
@@ -160,7 +161,7 @@ def build(run_dir: Path, out_path: Path):
     parts += ["<p class=sub style='margin-top:24px;font-size:12.5px'>"
               "* critical field — doubt about any of these blocks straight-through processing."
               "</p></div>"]
-    out_path.write_text("\n".join(parts))
+    out_path.write_text("\n".join(parts), encoding="utf-8")
     print(f"wrote {out_path}")
 
 
