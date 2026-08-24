@@ -1,0 +1,19 @@
+{
+  "doc_id": "D06",
+  "fields": {
+    "doc_type": "confirmation",
+    "sender_name": "National Spot Reps LLC",
+    "doc_id": "NSR-88253",
+    "doc_date": "2026-05-24",
+    "advertiser": "Northgate Dental Group",
+    "agency": null,
+    "flight_start": "2026-06-07",
+    "flight_end": "2026-07-04",
+    "gross_total": "49433.79",
+    "net_total": null,
+    "currency": "USD",
+    "line_item_count": 4
+  },
+  "not_visible_fields": [],
+  "line_sum": "49433.79"
+}

@@ -1,0 +1,8 @@
+# Only the canonical run is committed, as the evidence trail behind the
+# numbers in the README. Other runs are scratch.
+runs/*
+!runs/final/
+runs/*.log
+corpus/.work/
+__pycache__/
+*.pyc

@@ -1,0 +1,19 @@
+{
+  "doc_id": "D03",
+  "fields": {
+    "doc_type": "order",
+    "sender_name": "KTVR-TV Channel 9",
+    "doc_id": "11-26782",
+    "doc_date": "2026-04-22",
+    "advertiser": "Hillcrest Motors",
+    "agency": "Brightline Media",
+    "flight_start": "2026-05-03",
+    "flight_end": "2026-05-09",
+    "gross_total": "19629.69",
+    "net_total": "16685.24",
+    "currency": "USD",
+    "line_item_count": 2
+  },
+  "not_visible_fields": [],
+  "line_sum": "19629.69"
+}

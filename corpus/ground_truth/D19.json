@@ -1,0 +1,19 @@
+{
+  "doc_id": "D19",
+  "fields": {
+    "doc_type": "confirmation",
+    "sender_name": "National Spot Reps LLC",
+    "doc_id": "NSR-80255",
+    "doc_date": "2026-05-13",
+    "advertiser": "Hillcrest Motors",
+    "agency": "Brightline Media",
+    "flight_start": "2026-05-28",
+    "flight_end": "2026-06-03",
+    "gross_total": "23114.15",
+    "net_total": "19647.03",
+    "currency": "USD",
+    "line_item_count": 3
+  },
+  "not_visible_fields": [],
+  "line_sum": "23491.40"
+}

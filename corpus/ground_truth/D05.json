@@ -1,0 +1,19 @@
+{
+  "doc_id": "D05",
+  "fields": {
+    "doc_type": "confirmation",
+    "sender_name": "National Spot Reps LLC",
+    "doc_id": "NSR-98911",
+    "doc_date": "2026-03-17",
+    "advertiser": "Copperfield Insurance",
+    "agency": "Anchor Media Partners",
+    "flight_start": "2026-04-09",
+    "flight_end": "2026-04-15",
+    "gross_total": "39115.38",
+    "net_total": "33248.07",
+    "currency": "USD",
+    "line_item_count": 4
+  },
+  "not_visible_fields": [],
+  "line_sum": "39115.38"
+}

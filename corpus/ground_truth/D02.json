@@ -1,0 +1,19 @@
+{
+  "doc_id": "D02",
+  "fields": {
+    "doc_type": "invoice",
+    "sender_name": "Meridian Broadcast Group",
+    "doc_id": "MBG-48958",
+    "doc_date": "2026-01-27",
+    "advertiser": "Lakeshore Veterinary",
+    "agency": null,
+    "flight_start": "2026-01-31",
+    "flight_end": "2026-02-06",
+    "gross_total": "29727.32",
+    "net_total": null,
+    "currency": "USD",
+    "line_item_count": 2
+  },
+  "not_visible_fields": [],
+  "line_sum": "29727.32"
+}

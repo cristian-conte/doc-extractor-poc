@@ -1,0 +1,19 @@
+{
+  "doc_id": "D21",
+  "fields": {
+    "sender_name": "Hollis & Reed Media Buying",
+    "doc_id": null,
+    "doc_date": null,
+    "advertiser": null,
+    "flight_start": null,
+    "flight_end": null,
+    "gross_total": null,
+    "net_total": null,
+    "agency": null,
+    "currency": null,
+    "line_item_count": null,
+    "doc_type": "other"
+  },
+  "not_visible_fields": [],
+  "line_sum": "16415.19"
+}

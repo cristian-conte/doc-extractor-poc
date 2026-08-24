@@ -1,0 +1,19 @@
+{
+  "doc_id": "D08",
+  "fields": {
+    "doc_type": "order",
+    "sender_name": "Hollis & Reed Media Buying",
+    "doc_id": "HR-17633",
+    "doc_date": "2026-05-31",
+    "advertiser": "Northgate Dental Group",
+    "agency": null,
+    "flight_start": "2026-06-13",
+    "flight_end": "2026-06-19",
+    "gross_total": "31360.94",
+    "net_total": null,
+    "currency": "USD",
+    "line_item_count": 4
+  },
+  "not_visible_fields": [],
+  "line_sum": "31360.94"
+}

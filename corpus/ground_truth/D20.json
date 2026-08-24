@@ -1,0 +1,19 @@
+{
+  "doc_id": "D20",
+  "fields": {
+    "doc_type": "order",
+    "sender_name": "WQRM Radio 88.3",
+    "doc_id": "WQ-66837",
+    "doc_date": "2026-07-13",
+    "advertiser": "Ridgeway Furniture Outlet",
+    "agency": "Anchor Media Partners",
+    "flight_start": "2026-07-24",
+    "flight_end": "2026-07-30",
+    "gross_total": "28596.34",
+    "net_total": "24306.89",
+    "currency": "USD",
+    "line_item_count": 4
+  },
+  "not_visible_fields": [],
+  "line_sum": "28596.34"
+}

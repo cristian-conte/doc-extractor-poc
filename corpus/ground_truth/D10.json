@@ -1,0 +1,19 @@
+{
+  "doc_id": "D10",
+  "fields": {
+    "doc_type": "order",
+    "sender_name": "WQRM Radio 88.3",
+    "doc_id": "WQ-14488",
+    "doc_date": "2026-01-01",
+    "advertiser": "Ferber Appliance Depot",
+    "agency": "Keystone Buying Svcs",
+    "flight_start": "2026-01-21",
+    "flight_end": "2026-02-03",
+    "gross_total": "18225.22",
+    "net_total": "15491.44",
+    "currency": "USD",
+    "line_item_count": 4
+  },
+  "not_visible_fields": [],
+  "line_sum": "18225.22"
+}

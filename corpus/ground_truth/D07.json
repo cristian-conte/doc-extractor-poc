@@ -1,0 +1,19 @@
+{
+  "doc_id": "D07",
+  "fields": {
+    "doc_type": "order",
+    "sender_name": "Hollis & Reed Media Buying",
+    "doc_id": "HR-78145",
+    "doc_date": "2026-02-22",
+    "advertiser": "Ridgeway Furniture Outlet",
+    "agency": "Anchor Media Partners",
+    "flight_start": "2026-03-16",
+    "flight_end": "2026-04-12",
+    "gross_total": "18239.03",
+    "net_total": "15503.18",
+    "currency": "USD",
+    "line_item_count": 2
+  },
+  "not_visible_fields": [],
+  "line_sum": "18239.03"
+}

@@ -1,0 +1,22 @@
+{
+  "doc_id": "D18",
+  "fields": {
+    "doc_type": "invoice",
+    "sender_name": "QuickSpot Digital",
+    "doc_id": "QS-46291",
+    "doc_date": "2026-02-22",
+    "advertiser": "PaveRight Contracting",
+    "agency": "Keystone Buying Svcs",
+    "flight_start": "2026-03-04",
+    "flight_end": "2026-03-24",
+    "gross_total": "42816.49",
+    "net_total": "36394.02",
+    "currency": "USD",
+    "line_item_count": 2
+  },
+  "not_visible_fields": [
+    "gross_total",
+    "net_total"
+  ],
+  "line_sum": "42816.49"
+}

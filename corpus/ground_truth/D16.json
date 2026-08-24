@@ -1,0 +1,19 @@
+{
+  "doc_id": "D16",
+  "fields": {
+    "doc_type": "invoice",
+    "sender_name": "Meridian Broadcast Group",
+    "doc_id": "MBG-54203",
+    "doc_date": "2026-03-11",
+    "advertiser": "Val's Home & Garden",
+    "agency": "Brightline Media",
+    "flight_start": "2026-04-03",
+    "flight_end": "2026-04-16",
+    "gross_total": "20515.88",
+    "net_total": "17438.50",
+    "currency": "USD",
+    "line_item_count": 3
+  },
+  "not_visible_fields": [],
+  "line_sum": "20515.88"
+}

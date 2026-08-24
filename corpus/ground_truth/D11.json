@@ -1,0 +1,19 @@
+{
+  "doc_id": "D11",
+  "fields": {
+    "doc_type": "invoice",
+    "sender_name": "QuickSpot Digital",
+    "doc_id": "QS-93374",
+    "doc_date": "2026-05-19",
+    "advertiser": "Ferber Appliance Depot",
+    "agency": "Keystone Buying Svcs",
+    "flight_start": "2026-05-23",
+    "flight_end": "2026-05-29",
+    "gross_total": "22554.42",
+    "net_total": "19171.26",
+    "currency": "USD",
+    "line_item_count": 3
+  },
+  "not_visible_fields": [],
+  "line_sum": "22554.42"
+}

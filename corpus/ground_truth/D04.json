@@ -1,0 +1,19 @@
+{
+  "doc_id": "D04",
+  "fields": {
+    "doc_type": "order",
+    "sender_name": "KTVR-TV Channel 9",
+    "doc_id": "43-28999",
+    "doc_date": "2026-06-04",
+    "advertiser": "Val's Home & Garden",
+    "agency": "Brightline Media",
+    "flight_start": "2026-06-19",
+    "flight_end": "2026-07-02",
+    "gross_total": "30218.47",
+    "net_total": "25685.70",
+    "currency": "USD",
+    "line_item_count": 2
+  },
+  "not_visible_fields": [],
+  "line_sum": "30218.47"
+}

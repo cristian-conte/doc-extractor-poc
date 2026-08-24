@@ -1,0 +1,19 @@
+{
+  "doc_id": "D01",
+  "fields": {
+    "doc_type": "invoice",
+    "sender_name": "Meridian Broadcast Group",
+    "doc_id": "MBG-62202",
+    "doc_date": "2026-03-23",
+    "advertiser": "PaveRight Contracting",
+    "agency": "Keystone Buying Svcs",
+    "flight_start": "2026-04-16",
+    "flight_end": "2026-04-22",
+    "gross_total": "30655.59",
+    "net_total": "26057.25",
+    "currency": "USD",
+    "line_item_count": 2
+  },
+  "not_visible_fields": [],
+  "line_sum": "30655.59"
+}

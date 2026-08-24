@@ -1,0 +1,19 @@
+{
+  "doc_id": "D13",
+  "fields": {
+    "doc_type": "invoice",
+    "sender_name": "Europa Media Vertretung GmbH",
+    "doc_id": "EMV-45503",
+    "doc_date": "2026-01-27",
+    "advertiser": "Hillcrest Motors",
+    "agency": "Brightline Media",
+    "flight_start": "2026-01-30",
+    "flight_end": "2026-02-05",
+    "gross_total": "27893.64",
+    "net_total": "23709.59",
+    "currency": "EUR",
+    "line_item_count": 3
+  },
+  "not_visible_fields": [],
+  "line_sum": "27893.64"
+}

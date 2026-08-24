@@ -1,0 +1,19 @@
+{
+  "doc_id": "D17",
+  "fields": {
+    "doc_type": "order",
+    "sender_name": "KTVR-TV Channel 9",
+    "doc_id": "70-88460",
+    "doc_date": "2026-01-08",
+    "advertiser": "Copperfield Insurance",
+    "agency": "Anchor Media Partners",
+    "flight_start": "2026-01-20",
+    "flight_end": "2026-02-16",
+    "gross_total": "36855.64",
+    "net_total": "31327.29",
+    "currency": "USD",
+    "line_item_count": 3
+  },
+  "not_visible_fields": [],
+  "line_sum": "36855.64"
+}

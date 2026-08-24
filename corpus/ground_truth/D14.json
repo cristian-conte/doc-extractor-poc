@@ -1,0 +1,19 @@
+{
+  "doc_id": "D14",
+  "fields": {
+    "doc_type": "invoice",
+    "sender_name": "Europa Media Vertretung GmbH",
+    "doc_id": "EMV-29024",
+    "doc_date": "2026-02-13",
+    "advertiser": "Ridgeway Furniture Outlet",
+    "agency": "Anchor Media Partners",
+    "flight_start": "2026-02-27",
+    "flight_end": "2026-03-05",
+    "gross_total": "34337.80",
+    "net_total": "29187.13",
+    "currency": "EUR",
+    "line_item_count": 4
+  },
+  "not_visible_fields": [],
+  "line_sum": "34337.80"
+}

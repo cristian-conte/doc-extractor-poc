@@ -1,0 +1,19 @@
+{
+  "doc_id": "D09",
+  "fields": {
+    "doc_type": "order",
+    "sender_name": "WQRM Radio 88.3",
+    "doc_id": "WQ-97811",
+    "doc_date": "2026-03-16",
+    "advertiser": "Val's Home & Garden",
+    "agency": "Brightline Media",
+    "flight_start": "2026-03-21",
+    "flight_end": "2026-03-27",
+    "gross_total": "24571.97",
+    "net_total": "20886.17",
+    "currency": "USD",
+    "line_item_count": 3
+  },
+  "not_visible_fields": [],
+  "line_sum": "24571.97"
+}
