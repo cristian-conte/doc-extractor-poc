@@ -1,0 +1,23 @@
+# Scoped to this subtree on purpose. The rest of Tools is Windows/.NET work
+# where CRLF may be wanted; this directory is developed and run on macOS/Linux.
+
+# Shell scripts must keep LF whatever the cloning machine's core.autocrlf says.
+# With autocrlf=true the shebang becomes `#!/usr/bin/env bash\r` and the script
+# dies with "env: bash\r: No such file or directory".
+* text=auto eol=lf
+
+# These are the test corpus. Git must never rewrite a byte of them.
+#
+# Not a precaution -- verified: cloning with core.autocrlf=true corrupts seven
+# of the PDFs (D01, D05, D07, D12, D13, D19, D21). They are reportlab output
+# with uncompressed content streams, so they are mostly ASCII and git's
+# text/binary heuristic classifies them as text, then rewrites LF to CRLF
+# inside them. Tolerant readers repair the damage and render identically, which
+# is precisely what makes it dangerous: the test set is silently altered and
+# nothing complains. `text=auto` above does not save them; only this does.
+*.pdf  binary
+*.jpg  binary
+*.jpeg binary
+*.png  binary
+*.tif  binary
+*.tiff binary

@@ -370,6 +370,23 @@ The virtual environment is not optional on a recent Mac: Homebrew and system
 Pythons are marked externally managed, and a bare `pip install` fails with
 `error: externally-managed-environment`.
 
+**If `./run.sh` dies with `env: bash\r: No such file or directory`**, your git
+has `core.autocrlf=true` and rewrote the line endings on checkout. The
+`.gitattributes` here prevents that, but only for clones made after it landed.
+To fix an existing clone:
+
+```bash
+git pull
+git rm --cached -r . >/dev/null && git reset --hard   # re-checkout under the new rules
+git config --global core.autocrlf input               # stop it happening again
+```
+
+Worth doing rather than working around: the same setting silently corrupts seven
+of the corpus PDFs, because reportlab output is mostly ASCII and git's
+text/binary heuristic misclassifies it. Tolerant readers repair the damage and
+render identically, so nothing visibly breaks — which is exactly why it is worth
+correcting rather than ignoring.
+
 **Start here — reproduce every number in this README. Offline, free, seconds.**
 The raw model responses for all 21 documents are committed in `runs/final/raw/`,
 so scoring and reporting replay them. No API key, no network, no cost.
