@@ -4,5 +4,8 @@ pymupdf>=1.24
 pillow>=10.0
 numpy>=1.26
 
+# The drop-a-document demo (./run.sh ui). Not needed for the pipeline itself.
+flask>=3.0
+
 # Extraction is done by shelling out to the `claude` CLI, which must be
 # installed and authenticated. There is no Python client dependency.

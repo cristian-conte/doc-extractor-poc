@@ -418,4 +418,36 @@ python3 sensitivity.py --run final          # what moving the gate costs
 python3 run_pipeline.py --only D17,D20 --run scratch   # work on a subset
 ```
 
+### The demo UI
+
+```bash
+./run.sh ui        # http://127.0.0.1:5000
+```
+
+Drop a document on the page and watch it move through ingest, the reader, the
+checks and the gate, ending on GREEN / AMBER / RED with the specific reasons.
+The sidebar lists the 21 corpus documents; clicking one **replays its committed
+response** — no CLI, no API key, no cost, about a second — which is what to
+click first when showing someone. Dropping your own file is a real read: it
+needs the CLI, takes about 30 seconds and costs around $0.13.
+
+The page imports the pipeline rather than reimplementing it, so a replayed
+verdict is identical to that document's row in `runs/final/results.jsonl`, flag
+list included. There is a test for exactly that, because a demo that disagreed
+with the evaluated pipeline would be worse than no demo.
+
+Worth doing deliberately in front of someone: drop something that is not an
+order at all. It should come back RED / `OUT_OF_SCOPE` rather than inventing a
+total.
+
+One thing the page will not tell you: whether it was *right*. An uploaded
+document has no ground truth, so the demo shows what the gate decided and why,
+never an accuracy figure. Accuracy is only measurable over the labelled corpus,
+which is what `./run.sh eval` is for.
+
+It binds to localhost, caps uploads at 20 MB, allows only document file types,
+and runs at most two live reads at once so a double-click cannot fan out into
+money. There is no authentication, because it is a local demo and pretending
+otherwise would be theatre.
+
 ---

@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Document extraction — demo</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3E%F0%9F%93%84%3C/text%3E%3C/svg%3E">
+<style>
+/* Colour tokens are injected from report.py so this page and the static
+   report cannot drift apart. */
+/*SHARED_CSS*/
+
+/* Layout specific to the demo. */
+.app { max-width: 1240px; margin: 0 auto; padding: 28px 24px 80px; }
+header h1 { font-size: 22px; margin: 0 0 4px; letter-spacing: -.02em; }
+header p { color: var(--muted); margin: 0 0 22px; font-size: 14px; max-width: 78ch; }
+.cols { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 22px; align-items: start; }
+@media (max-width: 900px) { .cols { grid-template-columns: 1fr; } }
+
+.panel { border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+.panel h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .07em;
+  color: var(--muted); margin: 0; padding: 13px 15px; border-bottom: 1px solid var(--line); }
+
+.corpus { max-height: 66vh; overflow: auto; }
+.corpus button { display: flex; gap: 8px; align-items: center; width: 100%; text-align: left;
+  background: none; border: 0; border-bottom: 1px solid var(--line); padding: 8px 14px;
+  font: inherit; font-size: 13px; color: var(--fg); cursor: pointer; }
+.corpus button:hover { background: color-mix(in srgb, var(--fg) 6%, transparent); }
+.corpus button[aria-pressed="true"] { background: color-mix(in srgb, var(--fg) 10%, transparent); }
+.corpus .cid { font-weight: 650; min-width: 30px; }
+.corpus .cmeta { color: var(--muted); font-size: 11.5px; }
+.dot { width: 7px; height: 7px; border-radius: 50%; flex: none; }
+.dot.GREEN { background: var(--green); } .dot.AMBER { background: var(--amber); }
+.dot.RED { background: var(--red); } .dot.none { background: var(--line); }
+
+.drop { border: 2px dashed var(--line); border-radius: 12px; padding: 30px 22px;
+  text-align: center; color: var(--muted); background: var(--card); cursor: pointer;
+  transition: border-color .12s, background .12s; }
+.drop.over { border-color: var(--fg); background: color-mix(in srgb, var(--fg) 5%, transparent); }
+.drop strong { color: var(--fg); display: block; font-size: 15px; margin-bottom: 3px; }
+.drop small { display: block; margin-top: 7px; font-size: 12px; }
+input[type=file] { display: none; }
+
+.stages { list-style: none; margin: 0; padding: 6px 0; }
+.stages li { display: flex; gap: 10px; align-items: baseline; padding: 7px 15px;
+  font-size: 13.5px; color: var(--muted); }
+.stages li.active { color: var(--fg); }
+.stages li.done { color: var(--fg); }
+.stages .mark { width: 15px; flex: none; font-size: 12px; }
+.stages .detail { color: var(--muted); font-size: 12.5px; }
+.spin { display: inline-block; animation: sp 1s linear infinite; }
+@keyframes sp { to { transform: rotate(360deg); } }
+
+.verdict { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 20px; padding: 16px; }
+@media (max-width: 820px) { .verdict { grid-template-columns: 1fr; } }
+.tier { display: inline-block; font-weight: 700; font-size: 11.5px; letter-spacing: .09em;
+  padding: 4px 9px; border-radius: 5px; }
+.tier.GREEN { color: var(--green); background: var(--green-bg); }
+.tier.AMBER { color: var(--amber); background: var(--amber-bg); }
+.tier.RED { color: var(--red); background: var(--red-bg); }
+.why { font-size: 13.5px; margin: 10px 0 0; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 12px; }
+td { padding: 5px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+td.f { color: var(--muted); width: 38%; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12.5px; }
+tr.flagged td { background: var(--amber-bg); }
+tr.flagged td.f { color: var(--amber); font-weight: 600; }
+.note { font-size: 11.5px; color: var(--amber); display: block; margin-top: 2px; }
+.issues { margin-top: 12px; font-size: 12.5px; color: var(--muted); }
+.issues div { margin-bottom: 3px; }
+.shot img { width: 100%; border: 1px solid var(--line); border-radius: 6px; display: block; }
+.shot { max-height: 460px; overflow: auto; border-radius: 6px; }
+.banner { padding: 11px 15px; font-size: 13px; border-bottom: 1px solid var(--line); }
+.banner.warn { background: var(--amber-bg); color: var(--amber); }
+.banner.err { background: var(--red-bg); color: var(--red); white-space: pre-wrap; }
+.banner.info { background: color-mix(in srgb, var(--fg) 5%, transparent); color: var(--muted); }
+.caveat { color: var(--muted); font-size: 12px; margin-top: 14px; padding-top: 12px;
+  border-top: 1px solid var(--line); }
+.meta { color: var(--muted); font-size: 12.5px; margin-top: 8px; }
+.hidden { display: none; }
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <h1>Document extraction — demo</h1>
+    <p>Drop a document and watch it go through the pipeline. The same ingest,
+       reader, checks and gate that produced the numbers in the README — this
+       page only displays them.</p>
+  </header>
+
+  <div class="cols">
+    <aside class="panel">
+      <h2>Corpus — replay, free</h2>
+      <div class="corpus" id="corpus"></div>
+    </aside>
+
+    <main>
+      <div class="drop" id="drop" tabindex="0" role="button"
+           aria-label="Drop a document here or click to choose one">
+        <strong>Drop a document here</strong>
+        or click to choose one
+        <small>PDF, JPG, PNG or TIFF · up to 20 MB · a real read costs about $0.13 and takes ~30s</small>
+      </div>
+      <input type="file" id="file" accept=".pdf,.jpg,.jpeg,.png,.tif,.tiff">
+
+      <div class="panel hidden" id="run" style="margin-top:18px">
+        <h2 id="runTitle">Progress</h2>
+        <div id="banner"></div>
+        <ul class="stages" id="stages"></ul>
+        <div id="verdict"></div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script>
+const STAGES = [
+  ["received",  "Received"],
+  ["inspected", "Inspected"],
+  ["reading",   "Read by the model"],
+  ["checking",  "Checked"],
+  ["verdict",   "Gate"],
+];
+
+const $ = (id) => document.getElementById(id);
+let es = null;
+
+// ---------- corpus sidebar -------------------------------------------------
+fetch("/api/corpus").then(r => r.json()).then(docs => {
+  $("corpus").innerHTML = docs.map(d => `
+    <button data-doc="${d.doc_id}" aria-pressed="false">
+      <span class="dot ${d.tier || 'none'}"></span>
+      <span class="cid">${d.doc_id}</span>
+      <span class="cmeta">${d.sender} · ${d.condition}${d.trap ? ' · ' + d.trap : ''}</span>
+    </button>`).join("");
+  $("corpus").querySelectorAll("button").forEach(b =>
+    b.addEventListener("click", () => {
+      $("corpus").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", "false"));
+      b.setAttribute("aria-pressed", "true");
+      start({ doc_id: b.dataset.doc });
+    }));
+});
+
+fetch("/api/status").then(r => r.json()).then(s => {
+  if (!s.cli) {
+    showBanner("warn", "No reader CLI found, so uploaded documents cannot be read. " +
+                       "The corpus documents on the left still work — they replay committed responses.");
+  }
+});
+
+// ---------- dropzone -------------------------------------------------------
+const drop = $("drop");
+drop.addEventListener("click", () => $("file").click());
+drop.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") $("file").click(); });
+["dragenter", "dragover"].forEach(ev => drop.addEventListener(ev, e => {
+  e.preventDefault(); drop.classList.add("over");
+}));
+["dragleave", "drop"].forEach(ev => drop.addEventListener(ev, e => {
+  e.preventDefault(); drop.classList.remove("over");
+}));
+drop.addEventListener("drop", e => {
+  if (e.dataTransfer.files.length) upload(e.dataTransfer.files[0]);
+});
+$("file").addEventListener("change", e => {
+  if (e.target.files.length) upload(e.target.files[0]);
+});
+
+function upload(file) {
+  const fd = new FormData();
+  fd.append("file", file);
+  start(fd);
+}
+
+// ---------- run ------------------------------------------------------------
+function start(payload) {
+  if (es) { es.close(); es = null; }
+  $("run").classList.remove("hidden");
+  $("banner").innerHTML = "";
+  $("verdict").innerHTML = "";
+  renderStages(null);
+
+  const opts = payload instanceof FormData
+    ? { method: "POST", body: payload }
+    : { method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload) };
+
+  fetch("/api/jobs", opts)
+    .then(async r => {
+      const data = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(data.error || `Upload failed (${r.status})`);
+      return data;
+    })
+    .then(({ job_id, mode }) => {
+      $("runTitle").textContent = mode === "replay" ? "Replay" : "Reading this document";
+      listen(job_id);
+    })
+    .catch(err => showBanner("err", err.message));
+}
+
+function listen(jobId) {
+  es = new EventSource(`/api/jobs/${jobId}/events`);
+  es.onmessage = ev => handle(JSON.parse(ev.data));
+  es.addEventListener("done", () => { es.close(); es = null; });
+  es.onerror = () => { if (es) { es.close(); es = null; } };
+}
+
+let seen = {};
+function handle(ev) {
+  if (ev.stage === "error") { showBanner("err", ev.message); renderStages(null); return; }
+  if (ev.stage === "preview") { window._thumb = ev.thumbnail; return; }
+
+  seen[ev.stage] = ev;
+  if (ev.stage === "received" && ev.replay) showBanner("info", ev.note);
+  if (ev.stage === "read_done") { seen["reading"] = { ...seen["reading"], ...ev }; }
+  renderStages(ev.stage);
+  if (ev.stage === "verdict") renderVerdict(ev);
+}
+
+function renderStages(current) {
+  if (current === null) { seen = {}; }
+  const order = STAGES.map(s => s[0]);
+  const idx = current ? order.indexOf(current === "read_done" ? "reading" : current) : -1;
+  $("stages").innerHTML = STAGES.map(([key, label], i) => {
+    const ev = seen[key];
+    let mark = "○", cls = "";
+    if (i < idx || (ev && key !== current)) { mark = "●"; cls = "done"; }
+    if (key === current) { mark = key === "verdict" ? "●" : '<span class="spin">◐</span>'; cls = "active"; }
+    return `<li class="${cls}"><span class="mark">${mark}</span>
+      <span>${label}</span><span class="detail">${detail(key, ev)}</span></li>`;
+  }).join("");
+}
+
+function detail(key, ev) {
+  if (!ev) return "";
+  if (key === "received") return ev.filename || "";
+  if (key === "inspected") {
+    return `${ev.container}, ${ev.pages} page${ev.pages === 1 ? "" : "s"}, ` +
+           `${ev.has_text_layer ? "has a text layer" : "no text layer — pixels only"}`;
+  }
+  if (key === "reading") {
+    if (ev.replay) return `replayed — took ${ev.duration_s}s and $${(ev.cost_usd || 0).toFixed(3)} when it ran`;
+    if (ev.duration_s !== undefined) return `${ev.duration_s}s · $${(ev.cost_usd || 0).toFixed(3)}`;
+    return "this is the slow part…";
+  }
+  if (key === "checking") return ev.count === 0 ? "every check passed" :
+      `${ev.count} flag${ev.count === 1 ? "" : "s"} raised`;
+  if (key === "verdict") return ev.primary_reason || "";
+  return "";
+}
+
+const CRITICAL = ["doc_type","sender_name","doc_id","doc_date","advertiser",
+                  "flight_start","flight_end","gross_total","currency"];
+const ORDER = [...CRITICAL, "net_total", "agency", "line_item_count"];
+
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, c =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+function renderVerdict(ev) {
+  const flagged = {};
+  (ev.flags || []).forEach(f => { if (f.field) flagged[f.field] = f; });
+
+  const rows = ORDER.map(field => {
+    const entry = (ev.fields || {})[field] || {};
+    let shown = entry.value === null || entry.value === undefined || entry.value === ""
+      ? "—" : esc(entry.value);
+    if (entry.confidence === "uncertain") shown += ' <span class="note">reader unsure</span>';
+    const f = flagged[field];
+    const note = f ? `<span class="note">${esc(f.detail || f.code)}</span>` : "";
+    return `<tr class="${f ? "flagged" : ""}"><td class="f">${field}${
+      CRITICAL.includes(field) ? "*" : ""}</td><td>${shown}${note}</td></tr>`;
+  }).join("");
+
+  const issues = (ev.issues || []).length
+    ? `<div class="issues"><b>The reader also said:</b>${
+        ev.issues.slice(0, 5).map(i => `<div>· ${esc(i)}</div>`).join("")}</div>` : "";
+
+  const raw = ev.status !== "ok" && ev.raw_response
+    ? `<div class="issues"><b>Raw response kept:</b><div>${esc(ev.raw_response.slice(0, 400))}</div></div>`
+    : "";
+
+  const m = ev.meta || {};
+  const cost = ev.source === "live"
+    ? `${m.duration_s}s · $${(m.cost_usd || 0).toFixed(3)}`
+    : `replayed from a committed response`;
+
+  $("verdict").innerHTML = `
+    <div class="verdict">
+      <div>
+        <span class="tier ${ev.tier}">${ev.tier}</span>
+        <p class="why">${esc(ev.summary)}</p>
+        <table>${rows}</table>
+        ${issues}${raw}
+        <div class="meta">${cost}</div>
+        <p class="caveat">* critical field — doubt about any of these blocks
+          straight-through processing.<br>
+          ${ev.source === "live"
+            ? "There is no ground truth for a document you supplied, so this shows what the gate decided and why — not whether it was right. Accuracy is only measurable over the labelled corpus, via <code>./run.sh eval</code>."
+            : "This document is in the labelled corpus, so its accuracy is measured in <code>./run.sh eval</code>."}
+        </p>
+      </div>
+      <div class="shot">${window._thumb
+        ? `<img alt="the document" src="data:image/jpeg;base64,${window._thumb}">` : ""}</div>
+    </div>`;
+}
+
+function showBanner(kind, msg) {
+  $("run").classList.remove("hidden");
+  $("banner").innerHTML = `<div class="banner ${kind}">${esc(msg)}</div>`;
+}
+</script>
+</body>
+</html>

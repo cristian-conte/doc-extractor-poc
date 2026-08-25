@@ -96,10 +96,26 @@ ambiguous labels, parts of the page missing or cut off.
 
 PROMPT_HASH = hashlib.sha256(PROMPT.encode()).hexdigest()[:12]
 
-# Resolve the CLI once, rather than letting 21 documents each fail with a bare
-# FileNotFoundError. shutil.which honours PATHEXT on Windows and finds the real
-# binary behind a node version manager shim on macOS/Linux.
-CLAUDE_BIN = os.environ.get("CLAUDE_BIN") or shutil.which("claude")
+
+def _resolve_cli():
+    """Find the reader, and verify it is actually runnable.
+
+    An override pointing at nothing must behave exactly like "not installed" --
+    otherwise a typo in CLAUDE_BIN surfaces as a bare FileNotFoundError, once
+    per document, instead of the message that says how to fix it.
+    """
+    override = os.environ.get("CLAUDE_BIN")
+    if override:
+        found = shutil.which(override)
+        if found:
+            return found
+        if os.path.isfile(override) and os.access(override, os.X_OK):
+            return override
+        return None
+    return shutil.which("claude")
+
+
+CLAUDE_BIN = _resolve_cli()
 
 
 def require_cli():
@@ -111,6 +127,7 @@ def require_cli():
             "Only extraction needs it -- `./run.sh eval` replays the committed "
             "responses in runs/final/raw/ and needs no CLI and no API key."
         )
+
 
 _FENCE = re.compile(r"^\s*```(?:json)?\s*|\s*```\s*$", re.MULTILINE)
 
@@ -153,6 +170,8 @@ def _run_cli(doc_path: Path, timeout: int):
             )
         except subprocess.TimeoutExpired:
             return None, ("timeout", f"no response within {timeout}s")
+        except OSError as exc:
+            return None, ("error", f"could not start {CLAUDE_BIN!r}: {exc}")
         if proc.returncode != 0:
             return None, ("error", (proc.stderr or proc.stdout or "")[-800:])
         try:
