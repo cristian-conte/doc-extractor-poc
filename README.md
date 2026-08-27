@@ -24,8 +24,8 @@ second is the one to read first — see [Results](#results).
 Needs Python 3.9+.
 
 ```bash
-git clone https://github.com/cristian-conte/document-extraction-prototype.git
-cd document-extraction-prototype
+git clone https://github.com/cristian-conte/doc-extractor-poc.git
+cd doc-extractor-poc
 
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
