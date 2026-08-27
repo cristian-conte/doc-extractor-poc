@@ -45,7 +45,8 @@ def process(entry, run_dir, from_cache, timeout):
         cache.parent.mkdir(parents=True, exist_ok=True)
         cache.write_text(json.dumps(record, indent=2), encoding="utf-8")
         print(f"  {doc_id}  {record['status']:<12} "
-              f"{record['meta']['duration_s']:>5.1f}s  ${record['meta']['cost_usd']:.3f}",
+              f"{record['meta']['duration_s']:>5.1f}s  ${record['meta']['cost_usd']:.3f}"
+              f"  {record['meta'].get('model') or '?'}",
               flush=True)
 
     flags = validate.check(record)
@@ -107,6 +108,10 @@ def main():
     total_cost = sum(r["meta"]["cost_usd"] for r in records)
     print(f"\n  GREEN {tiers.get('GREEN', 0)}   AMBER {tiers.get('AMBER', 0)}   "
           f"RED {tiers.get('RED', 0)}")
+    # Name the reader. These numbers belong to whichever model produced them,
+    # and a run whose records cannot say which one is evidence of nothing.
+    readers = sorted({r["meta"].get("model") for r in records if r["meta"].get("model")})
+    print(f"  reader: {', '.join(readers) if readers else 'not recorded (run predates model capture)'}")
     if not args.from_cache:
         print(f"  extraction cost ${total_cost:.2f} for {len(records)} documents")
     print(f"  wrote {out}")

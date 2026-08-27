@@ -275,14 +275,18 @@ is for.
    memory between documents.
 6. **Duplicate detection.** The same invoice arriving by email and by post is a
    routine and expensive failure.
-7. **Cost and latency engineering.** Every document is sent as pixels, including
-   the seven that have a perfectly good text layer. Using it would be cheaper
-   and better on exactly those documents; one code path was worth more than the
-   saving for a prototype.
-8. **Any compliance posture.** Document images go to an external API. No PII
-   handling, no retention policy, no audit-grade provenance beyond a prompt hash
-   and a cost figure per record. For most organisations with this problem, that
-   list is the actual blocker, not accuracy.
+7. **Any control over how a document gets read.** The file is handed to the
+   reader exactly as it arrived and the reader decides what to do with it —
+   nothing here rasterises a PDF or strips its text layer. So on the seven
+   born-digital PDFs it may be reading the text layer rather than looking at
+   the page, and this pipeline can neither choose that nor observe which
+   happened. Worth knowing before comparing cost or latency across containers,
+   and the thing to fix first if either mattered.
+8. **Any compliance posture.** Documents go to an external API. No PII
+   handling, no retention policy. Provenance is a prompt hash, a cost figure and
+   the reader's identity per record — better than nothing, nowhere near
+   audit-grade. For most organisations with this problem, that list is the
+   actual blocker, not accuracy.
 
 ---
 
@@ -427,6 +431,30 @@ Expect the headline to move a little between runs. The same document does not
 always read the same way — D09 has already been observed classifying correctly
 on one run and incorrectly on another, from an identical file. That variance is
 what the 45–83% interval is expressing.
+
+### Which reader
+
+Reading is done by a vision-capable model reached through the local `claude`
+CLI — not the API SDK, which is why there is no Python client dependency. The
+model is handed a *filename* and its own file-reading tool rather than an image,
+so each extraction is a small agent loop (the records show three or four turns),
+not a single vision call.
+
+Whichever model the CLI defaults to is used unless you say otherwise:
+
+```bash
+EXTRACTION_MODEL=<model-id> ./run.sh extract
+```
+
+Each run prints its reader, and every record now carries `meta.model`.
+
+**The committed run in `runs/final/` predates that and does not carry it.** So
+the 67% in this README cannot be attributed to a specific model from the
+evidence trail — only re-extracting will produce records that can. That is a
+real limitation of the committed numbers rather than a cosmetic one: a
+straight-through rate detached from the reader that earned it is not a claim
+anyone should lean on, and if the CLI's default shifts, a re-run would move the
+figures with nothing in the old records to explain why.
 
 Useful extras:
 

@@ -283,7 +283,8 @@ function renderVerdict(ev) {
 
   const m = ev.meta || {};
   const cost = ev.source === "live"
-    ? `${m.duration_s}s · $${(m.cost_usd || 0).toFixed(3)}`
+    ? `${m.duration_s}s · $${(m.cost_usd || 0).toFixed(3)}` +
+      (m.model ? ` · read by ${esc(m.model)}` : "")
     : `replayed from a committed response`;
 
   $("verdict").innerHTML = `

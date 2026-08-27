@@ -149,7 +149,8 @@ def run_upload(job_id, path: Path, original_name: str):
         started = time.time()
         record = extract_one(path, job_id[:8])
         _emit(q, "read_done", duration_s=round(time.time() - started, 1),
-              cost_usd=record["meta"]["cost_usd"], status=record["status"])
+              cost_usd=record["meta"]["cost_usd"], status=record["status"],
+              model=record["meta"].get("model"))
         _finish(q, record, source="live")
     except Exception as exc:                                  # noqa: BLE001
         _emit(q, "error", message=f"{type(exc).__name__}: {exc}")

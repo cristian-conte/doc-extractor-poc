@@ -13,11 +13,16 @@ def describe(path: Path) -> dict:
     """Classify the delivered file.
 
     The born-digital flag is recorded because it is the strongest single
-    predictor of extraction accuracy and the evaluation slices on it. It is not
-    used to choose an extraction path: everything is read as pixels, so there is
-    one code path to explain and one failure mode to reason about. Using the
-    text layer where it exists is an obvious optimisation and is deliberately
-    not built here.
+    predictor of extraction accuracy and the evaluation slices on it. It does
+    not route anything: the file is handed to the reader exactly as it arrived,
+    and the reader decides how to open it.
+
+    That last point is worth being precise about, because it is easy to assume
+    otherwise. Nothing here rasterises a PDF or strips its text layer first. So
+    for a born-digital PDF the reader may well be using the text layer rather
+    than looking at the page, and this pipeline neither controls that nor can
+    observe which happened -- which is exactly why cost and latency per document
+    are not comparable across containers.
     """
     suffix = path.suffix.lower()
     if suffix in IMAGE_SUFFIXES:
@@ -35,15 +40,3 @@ def describe(path: Path) -> dict:
         finally:
             doc.close()
     return {"container": suffix.lstrip(".") or "unknown", "pages": 1, "has_text_layer": False}
-
-
-def rasterize(path: Path, out_path: Path, dpi: int = 190) -> Path:
-    """Render page 1 of a PDF to PNG. Images are passed through unchanged."""
-    if path.suffix.lower() != ".pdf":
-        return path
-    doc = fitz.open(path)
-    try:
-        doc[0].get_pixmap(dpi=dpi).save(out_path)
-    finally:
-        doc.close()
-    return out_path

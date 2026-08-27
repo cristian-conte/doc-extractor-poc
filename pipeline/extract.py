@@ -150,6 +150,26 @@ def _parse_model_json(text: str):
     return None
 
 
+def _models_used(envelope):
+    """Which models served this call, and which did most of the work.
+
+    The CLI reports per-model usage in the envelope. Recording it matters:
+    a straight-through rate is only meaningful attached to the reader that
+    produced it, and without this a shift in the CLI's default would silently
+    change the numbers with nothing in the evidence trail to explain it.
+    """
+    usage = envelope.get("modelUsage")
+    if not isinstance(usage, dict) or not usage:
+        return [], None
+
+    def output_tokens(name):
+        entry = usage.get(name)
+        return entry.get("outputTokens", 0) if isinstance(entry, dict) else 0
+
+    names = sorted(usage)
+    return names, max(names, key=output_tokens)
+
+
 def _run_cli(doc_path: Path, timeout: int):
     """Run one extraction in an isolated directory. Returns (envelope, error)."""
     workdir = Path(tempfile.mkdtemp(prefix="extract-"))
@@ -188,6 +208,7 @@ def extract_one(doc_path: Path, doc_id: str, timeout: int = None) -> dict:
     timeout = timeout or THRESHOLDS["timeout_seconds"]
     attempts, last_error, started = 0, None, time.time()
     cost, turns, raw_text = 0.0, 0, ""
+    models, primary = [], None
 
     while attempts < THRESHOLDS["max_attempts"]:
         attempts += 1
@@ -197,21 +218,23 @@ def extract_one(doc_path: Path, doc_id: str, timeout: int = None) -> dict:
             continue
         cost += float(envelope.get("total_cost_usd") or 0)
         turns += int(envelope.get("num_turns") or 0)
+        seen, primary = _models_used(envelope)
+        models = sorted(set(models) | set(seen))
         raw_text = envelope.get("result") or ""
         parsed = _parse_model_json(raw_text)
         if parsed is None:
             last_error = ("parse_failure", "model output was not JSON")
             continue
         return _record(doc_id, doc_path, "ok", parsed, raw_text, attempts,
-                       started, cost, turns)
+                       started, cost, turns, models, primary)
 
     kind, detail = last_error or ("error", "unknown")
     return _record(doc_id, doc_path, kind, None, raw_text, attempts,
-                   started, cost, turns, detail=detail)
+                   started, cost, turns, models, primary, detail=detail)
 
 
 def _record(doc_id, doc_path, status, parsed, raw_text, attempts, started,
-            cost, turns, detail=None):
+            cost, turns, models=None, primary_model=None, detail=None):
     fields, issues, unreadable, line_items = {}, [], False, []
     if parsed:
         unreadable = bool(parsed.get("unreadable"))
@@ -257,5 +280,12 @@ def _record(doc_id, doc_path, status, parsed, raw_text, attempts, started,
             "cost_usd": round(cost, 4),
             "turns": turns,
             "prompt_hash": PROMPT_HASH,
+            # Which reader produced this. A straight-through rate means nothing
+            # detached from the model that earned it: without this, a shift in
+            # the CLI's default would change the numbers and leave no trace.
+            # `model` is whichever did most of the generating; `models` includes
+            # any the CLI used for its own internal side-tasks.
+            "model": primary_model,
+            "models": models or [],
         },
     }
